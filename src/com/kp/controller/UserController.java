@@ -126,7 +126,7 @@ public class UserController {
 			// 保存用户信息	
 			//userService.updateUserNameSelective(dbuser);
 			request.getSession().setAttribute("username", dbuser.getUserName());
-			request.getSession().setAttribute("email", dbuser.getUserEmail());
+			request.getSession().setAttribute("userId", dbuser.getUserId());
 			return "user/index";
 		}
 
@@ -175,7 +175,8 @@ public class UserController {
      */
     @RequestMapping(value = "/loginout")
 	public String LoginOut(HttpServletRequest request) {
-		request.getSession().removeAttribute("user");
+		request.getSession().removeAttribute("username");
+		request.getSession().removeAttribute("userId");
 		return "user/login";
 	}
 }

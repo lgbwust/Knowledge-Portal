@@ -1,9 +1,21 @@
 package com.kp.controller;
 
-public class KnowledgeController {
+import javax.annotation.Resource;
 
-	public KnowledgeController() {
-		// TODO Auto-generated constructor stub
+import org.springframework.stereotype.Controller;
+import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RequestMethod;
+
+import com.kp.service.KnowledgeService;
+
+@Controller
+public class KnowledgeController{
+	@Resource
+	private KnowledgeService knowledgeService;
+	
+	@RequestMapping(value="/addknowledge",method=RequestMethod.POST)
+	public String addKnowledge(){
+		return "user/addResult";		
 	}
-
 }
+

@@ -16,7 +16,7 @@
 	<div class="content">
 		<div id="top">
 			<div class="padding"> 
-				欢迎！&nbsp;${username} | <a href="<%=basePath%>loginout.do"><button name="logout" >注销</button></a>  
+				欢迎！&nbsp;${username},${userId} | <a href="<%=basePath%>loginout.do"><button name="logout" >注销</button></a>  
 			</div>
 		</div>
 		<div id="header">
@@ -36,7 +36,7 @@
 			  	<ul>
 					<li><a href="<%=basePath %>ind.do">主页</a></li>
 					<li><a href="<%=basePath %>add.do">知识上传</a></li>
-					<li><a href="<%=basePath %>sea.do">高级搜索</a></li>
+					<li><a href="<%=basePath %>sea.do">知识搜索</a></li>
 					<li><a href="<%=basePath %>upl.do">文件上传</a></li>
 					<li><a href="userinfo.jsp">个人信息</a></li>
       			</ul>
@@ -70,9 +70,9 @@
 			</div>
 			<div class="left_side">
             	
-				<h2><a href="#">最新知识</a></h2>
+				<h2><a href="#">知识列表</a></h2>
 				
-				<h3>这里，您将看到最新上传的知识资料</h3>
+				<h3>这里，您将看到本站所有知识资料</h3>
 			
 				<div class="img"></div>
 				
@@ -80,8 +80,8 @@
 				
 				<p class="date">上传者: <</p><br />
 				<p></p>
-				<h2><a href="#">知识列表</a></h2>
-				<h3>这里，您将看到本站所有知识资料</h3>
+				<h2><a href="#">文件列表</a></h2>
+				<h3>这里，您将看到本站所有文件资料</h3>
 				<div class="navlist" id="klist">
 				<ul>
                 	

@@ -32,7 +32,7 @@
 			  	<ul>
 					<li><a href="<%=basePath %>ind.do">主页</a></li>
 					<li><a href="<%=basePath %>add.do">知识上传</a></li>
-					<li><a href="<%=basePath %>sea.do">高级搜索</a></li>
+					<li><a href="<%=basePath %>sea.do">知识搜索</a></li>
 					<li><a href="<%=basePath %>upl.do">文件上传</a></li>
 					<li><a href="userinfo.jsp">个人信息</a></li>
       			</ul>
@@ -41,7 +41,7 @@
         
 		
 		<div id="main">
-		您当前的位置 > <a href="index.jsp">主页</a> > 高级搜索
+		您当前的位置 > <a href="index.jsp">主页</a> > 知识搜索
 			<div class="right_side">
 				
 				<div class="nav">
@@ -68,54 +68,34 @@
 			</div>
 			<div class="left_side">
             	
-				<h2><a href="#">高级搜索</a></h2>
+				<h2><a href="#">知识搜索</a></h2>
 				<h3>普通搜索为普通用户服务，高级搜索为高级用户服务</h3>
                 <div class="register">
-                <form action="searchresult.jsp" method="post">
-                	<table border="0" cellspacing="20">
-               	    	<tr>
-                        	<td>关键字：</td>
-                            <td><input type="text" name="EKeywords" id="user"" /></td>
-                        </tr>
+                <form action="<%=basePath %>ind.do" method="post">
+                	<table border="0" cellspacing="20">              	    
                         <tr>
                         	<td>知识名称：</td>
                         	<td><input type="text" name="EName" id="" /></td>
                         </tr>
                         <tr>
-                        	<td>上传时间：</td>
-                        	<td><input type="text" name="EDate" id="" /></td>
-                        </tr>
-                        <tr>
-                        	<td>作者：</td>
+                        	<td>上传者：</td>
                         	<td><input type="text" name="username" /></td>
                         </tr>
                         <tr>
                         	<td>知识类别：</td>
                             <td>
                             	<select name="HName">
-                                	<option value="Java">Java</option>
-                                    <option value="C++">C++</option>
-                                    <option value="dotnet">dotnet</option>
-                                    <option value="others">others</option>
+                                	<option value="1">Java</option>
+                                    <option value="2">C++</option>
+                                    <option value="3">dotnet</option>
+                                    <option value="4">others</option>
                                 </select>
                             </td>
                         </tr>
-                        <tr>
-                        	<td>每页显示：</td>
-                            <td>
-                            	<select name="kpagenum">
-                                	<option value="10">10条记录</option>
-                                    <option value="100">100条记录</option>
-                                </select>
-                            </td>
-                        </tr>
-                        <tr>
-                        	<td>版本号：</td>
-                        	<td><input type="text" name="EVersion" /></td>
-                        </tr>
+                      
                         <tr>
                         	<td></td>
-                        	<td align="right"><input type="submit" value="提交" /></td>
+                        	<td align="right"><input type="submit" value="搜索" /></td>
                         </tr>
                     </table>
                 </form>

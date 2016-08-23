@@ -37,7 +37,7 @@
 			  	<ul>
 				    <li><a href="<%=basePath %>ind.do">主页</a></li>
 					<li><a href="<%=basePath %>add.do">知识上传</a></li>
-					<li><a href="<%=basePath %>sea.do">高级搜索</a></li>
+					<li><a href="<%=basePath %>sea.do">知识搜索</a></li>
 					<li><a href="<%=basePath %>upl.do">文件上传</a></li>
 					<li><a href="userinfo.jsp">个人信息</a></li>
       			</ul>
@@ -45,7 +45,7 @@
 		</div>
         
         <div id="main">
-		您当前的位置 > <a href="index.jsp">主页</a> > 知识上传
+		您当前的位置 > <a href="<%=basePath %>ind.do">主页</a> > 知识上传
 			<div class="right_side">
 				
 				<div class="nav">
@@ -75,7 +75,7 @@
 				<h2><a href="#">新知识上传</a></h2>
 				<h3>知识系统的壮大，需要每个会员的支持</h3>
                 <div class="register">
-                 <form action="uploadSubmit.jsp" method="post">
+                 <form action="<%=basePath %>addknowledge.do" method="post">
 							  
                 	<table border="0" cellspacing="0">
                	    	<tr>
@@ -87,25 +87,16 @@
                             <td>
                             	<select name="ktype">
                                 	<option value="Default">选择分类</option>
-									<option value="Java">Java</option>
-                                    <option value="C++">C++</option>
-                                    <option value="dotnet">dotnet</option>
-                                    <option value="others">others</option>
+									<option value="1">Java</option>
+                                    <option value="2">C++</option>
+                                    <option value="3">dotnet</option>
+                                    <option value="4">others</option>
                                 </select>
                             </td>
                         </tr>
                         <tr>
-                        	<td>关键词：</td>
+                        	<td>附加说明</td>
                             <td><input type="text" name="kkeyword" /></td>
-                            <td><span id="kkeywordspan">逗号分隔</span></td>
-                        </tr>
-                        <tr>
-                        	<td>版本号：</td>
-                            <td><input type="text" name="kversion" /></td>
-                        </tr>
-                        <tr>
-                        	<td>介绍图片：</td>
-                            <td><input type="text" name="kpth" /></td>
                         </tr>
                         
                         </table>
