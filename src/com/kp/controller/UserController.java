@@ -24,7 +24,11 @@ import org.springframework.web.servlet.mvc.support.RedirectAttributes;
 import com.kp.domain.User;
 import com.kp.service.UserService;
 
-
+/**
+ * 用户登录及注册、注销处理
+ * @author fiberhome
+ * @date 2016/8/23
+ */
 @Controller 
 public class UserController {
 	private static Logger logger = Logger.getLogger(UserController.class);

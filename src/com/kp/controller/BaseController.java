@@ -6,15 +6,22 @@ import javax.servlet.http.HttpServletRequest;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.RequestMapping;
 
-
+/**
+ * 处理页面间的各种jsp跳转问题
+ * @author fiberhome
+ * @date 2016/8/23
+ */
 @Controller
 public class BaseController {
     @Resource
 
+    //处理主页请求
     @RequestMapping(value = "/mainPage")
     public String mainPage(HttpServletRequest request){
         return  "main";
     }
+    
+    //主页入口请求
     @RequestMapping(value = "/btn1")
     public String S1_Page(HttpServletRequest request){
         return  "/user/login";
@@ -27,6 +34,8 @@ public class BaseController {
     public String S3_Page(HttpServletRequest request){
         return  "admin/index";
     }
+    
+    //登录后菜单请求
     @RequestMapping(value = "/add")
     public String S4_Page(HttpServletRequest request){
         return  "user/addknowledge";
