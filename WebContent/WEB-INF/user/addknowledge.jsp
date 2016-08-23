@@ -13,12 +13,24 @@
 <title>用户页面</title>
 </head>
 <body>
-<center>  
-<h1><b>欢迎回来~</b></h1>  
-用户名：${username}<br>    
-邮箱：${email}<br>
-<a href="<%=basePath%>loginout.do"><button name="logout" >注销</button></a>  
-</center>
+<div class="content">
+		<div id="top">
+			<div class="padding"> 
+				欢迎！&nbsp;${username} | <a href="<%=basePath%>loginout.do"><button name="logout" >注销</button></a>  
+			</div>
+		</div>
+		<div id="header">
+			<div class="f_search">
+					<form method="post" action="searchresult.jsp">
+						<p><input type="text" name="EKeywords" value="search..." class="search" onblur="if(this.value=='') this.value='search...';" onfocus="if(this.value=='search...') this.value='';" /> <input type="submit" value="Go" class="submit" /></p>
+					</form>
+			</div>
+			<div class="title">
+				<!--  <h1>囧之知识管理系统</h1>
+				<h2>您的支持是我们前进最大的动力!</h2>-->
+			</div>
+		</div>
+		
 
     <div id="subheader">
 			<div id="menu">
@@ -75,7 +87,10 @@
                             <td>
                             	<select name="ktype">
                                 	<option value="Default">选择分类</option>
-									
+									<option value="Java">Java</option>
+                                    <option value="C++">C++</option>
+                                    <option value="dotnet">dotnet</option>
+                                    <option value="others">others</option>
                                 </select>
                             </td>
                         </tr>
@@ -131,6 +146,6 @@
 				Copyright &copy; 测试页面~
 			</div>
 		</div>
-		  
+	</div>	  
 </body>
 </html>
