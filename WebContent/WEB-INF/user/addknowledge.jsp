@@ -96,7 +96,7 @@
                         </tr>
                         <tr>
                         	<td>附加说明</td>
-                            <td><input type="text" name="kkeyword" /></td>
+                            <td><input type="text" name="extra_info" /></td>
                         </tr>
                         
                         </table>
