@@ -11,6 +11,8 @@ public interface AdminService {
 	int insertSelective(Admin record);
 
 	Admin selectByPrimaryKey(Integer adminId);
+	
+	Admin selectByName(String adminName);
 
 	int updateByPrimaryKeySelective(Admin record);
 

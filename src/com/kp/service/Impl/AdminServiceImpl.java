@@ -74,4 +74,14 @@ public class AdminServiceImpl implements AdminService{
         return 0; 
 	}
 
+	@Override
+	public Admin selectByName(String adminName) {
+		try {  
+            return adminDao.selectByName(adminName);
+        } catch (Exception e) {  
+            e.printStackTrace();  
+        }  
+        return null; 
+	}
+
 }

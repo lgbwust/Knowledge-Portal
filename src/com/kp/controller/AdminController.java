@@ -9,6 +9,7 @@ import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 
+import com.kp.domain.Admin;
 import com.kp.service.AdminService;
 
 /**
@@ -33,7 +34,17 @@ public class AdminController {
 		System.out.println("管理员用户名为："+name);
 		System.out.println("管理员密码为:"+psw);
 		log.info(name);
-		return "admin/index";
+		Admin admin=adminService.selectByName(name);
+		if(admin!=null&&admin.getAdminPsw().equals(psw)){
+			//将管理员名字保存到session中以便前台获取
+			request.getSession().setAttribute("adname", name);
+			return "admin/index";
+		}
+		else{
+			request.getSession().setAttribute("admsg", "登录失败,用户名或密码错误~~~ :)");
+			return "admin/adminlogin";
+			}
+		//return "admin/adminlogin";
 	}
 
 }

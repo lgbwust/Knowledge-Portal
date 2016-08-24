@@ -36,7 +36,7 @@
     select 
     <include refid="Base_Column_List" />
     from user
-    where user_name = #{userName,jdbcType=INTEGER}
+    where user_name = #{userName,jdbcType=VARCHAR}
   </select>
   
     <select id="findByEmail" resultMap="BaseResultMap" parameterType="string" >
@@ -47,7 +47,7 @@
     select 
     <include refid="Base_Column_List" />
     from user
-    where user_email = #{userEmail,jdbcType=INTEGER}
+    where user_email = #{userEmail,jdbcType=VARCHAR}
   </select>
   <delete id="deleteByPrimaryKey" parameterType="java.lang.Integer" >
     <!--

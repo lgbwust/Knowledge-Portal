@@ -41,6 +41,9 @@ public interface AdminMapper {
      *
      * @mbggenerated
      */
+    
+    Admin selectByName(String adminName);
+    
     int updateByPrimaryKeySelective(Admin record);
 
     /**
