@@ -21,6 +21,8 @@
 		<div id="header">
 			
 			<div class="title">
+			<!--  <h1>此处添加title</h1>
+				<h2>此处添加subtitle</h2>-->
 			</div>
 		</div>
 	
@@ -40,6 +42,11 @@
 		您当前的位置 > <a href="<%=basePath %>ind.do">主页</a> > 知识添加结果
 		</div>
 		<div>添加成功，待管理员审核通过后将显示在主页上</div>
+		<div id="footer">
+			<div class="padding">
+				Copyright &copy; 测试页面
+			</div>
+		</div>
 		</div>
 </body>
 </html>

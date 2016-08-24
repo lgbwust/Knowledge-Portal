@@ -26,8 +26,8 @@
 					</form>
 			</div>
 			<div class="title">
-				<!--  <h1>囧之知识管理系统</h1>
-				<h2>您的支持是我们前进最大的动力!</h2>-->
+				<!--  <h1>此处添加title</h1>
+				<h2>此处添加subtitle</h2>-->
 			</div>
 		</div>
 	
