@@ -32,7 +32,7 @@ public class BaseController {
     }
     @RequestMapping(value = "/btn3")
     public String S3_Page(HttpServletRequest request){
-        return  "admin/index";
+        return  "admin/adminlogin";
     }
     
     //登录后菜单请求
