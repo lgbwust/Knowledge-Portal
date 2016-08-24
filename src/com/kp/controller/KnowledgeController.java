@@ -44,7 +44,12 @@ public class KnowledgeController{
         kd.setExtra(extra);
         kd.setUserId(userId);
         kd.setStatus(status); //新插入数据的状态统一设为待审核
-        knowledgeService.insertSelective(kd);       
+        try{
+        	knowledgeService.insertSelective(kd);       
+        }
+        catch(Exception e){
+        	e.printStackTrace();
+        }
         //将数据转换成  
         Map<String,Object> map = new HashMap<String,Object>();    
         map.put("username", kname);    

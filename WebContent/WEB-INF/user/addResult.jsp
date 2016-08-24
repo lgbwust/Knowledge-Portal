@@ -4,9 +4,42 @@
 <html>
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-<title>Insert title here</title>
+<%
+    String path = request.getContextPath();
+    String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.getServerPort()+path+"/";
+%>
+<title>添加结果</title>
+<link rel="stylesheet" href="css/style.css">
 </head>
 <body>
-上传成功~~~
+	<div class="content">
+		<div id="top">
+			<div class="padding">
+				欢迎！&nbsp; ${username} | <a href="<%=basePath%>loginout.do"><button name="logout" >注销</button></a>
+			</div>
+		</div>
+		<div id="header">
+			
+			<div class="title">
+			</div>
+		</div>
+	
+		
+        <div id="subheader">
+			<div id="menu">
+			  	<ul>
+					<li><a href="<%=basePath %>ind.do">主页</a></li>
+					<li><a href="<%=basePath %>add.do">知识上传</a></li>
+					<li><a href="<%=basePath %>sea.do">知识搜索</a></li>
+					<li><a href="<%=basePath %>upl.do">文件上传</a></li>
+					<li><a href="userinfo.jsp">个人信息</a></li>
+      			</ul>
+			</div>
+		</div>
+		<div id="main">
+		您当前的位置 > <a href="<%=basePath %>ind.do">主页</a> > 知识添加结果
+		</div>
+		<div>添加成功，待管理员审核通过后将显示在主页上</div>
+		</div>
 </body>
 </html>
