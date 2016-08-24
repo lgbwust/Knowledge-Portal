@@ -1,5 +1,7 @@
 package com.kp.service;
 
+import java.util.List;
+
 import com.kp.domain.Knowledge;
 import com.kp.domain.KnowledgeWithBLOBs;
 
@@ -11,7 +13,9 @@ public interface KnowledgeService {
 
     int insertSelective(KnowledgeWithBLOBs record);
 
-    KnowledgeWithBLOBs selectByPrimaryKey(Integer kid);
+    List<KnowledgeWithBLOBs> selectByPrimaryKey(Integer kid);
+    
+    List<KnowledgeWithBLOBs> listKnowledge(int status);
 
     int updateByPrimaryKeySelective(KnowledgeWithBLOBs record);
 

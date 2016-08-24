@@ -1,5 +1,7 @@
 package com.kp.service.Impl;
 
+import java.util.List;
+
 import javax.annotation.Resource;
 
 import org.springframework.stereotype.Service;
@@ -46,7 +48,7 @@ public class KnowledgeServiceImpl implements KnowledgeService {
 	}
 
 	@Override
-	public KnowledgeWithBLOBs selectByPrimaryKey(Integer kid) {
+	public List<KnowledgeWithBLOBs> selectByPrimaryKey(Integer kid) {
 		try {  
             return knowledgeDao.selectByPrimaryKey(kid);
         } catch (Exception e) {  
@@ -83,6 +85,16 @@ public class KnowledgeServiceImpl implements KnowledgeService {
             e.printStackTrace();  
         }  
         return 0; 
+	}
+
+	@Override
+	public List<KnowledgeWithBLOBs> listKnowledge(int status) {
+		try {  
+            return knowledgeDao.listKnowledge(status);
+        } catch (Exception e) {  
+            e.printStackTrace();  
+        }  
+        return null; 
 	}
 
 }

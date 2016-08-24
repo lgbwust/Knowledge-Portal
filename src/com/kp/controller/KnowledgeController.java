@@ -2,6 +2,7 @@ package com.kp.controller;
 
 import java.io.IOException;
 import java.util.HashMap;
+import java.util.List;
 import java.util.Map;
 
 import javax.annotation.Resource;
@@ -25,6 +26,7 @@ public class KnowledgeController{
 	@Resource
 	private KnowledgeService knowledgeService;
 	
+	//添加知识点
 	@RequestMapping(value="/addknowledge",method=RequestMethod.POST)
 	public ModelAndView  addKnowledge(HttpServletRequest request, HttpServletResponse response) throws IOException{  
         String kname=(String)request.getParameter("kname");     
@@ -64,6 +66,14 @@ public class KnowledgeController{
         response.getWriter().flush();   
         response.getWriter().close();*/  
         return new ModelAndView("user/addResult",map);    
-    } 
+    }
+	//知识点展示功能实现
+	@RequestMapping(value="/showinfo")
+	public String showKnowledge(HttpServletRequest request){
+		List<KnowledgeWithBLOBs> xx= knowledgeService.selectByPrimaryKey(1);
+		//List<KnowledgeWithBLOBs> xx=knowledgeService.listKnowledge(0);
+		request.setAttribute("xx",xx);
+		return "user/index";
+	}
 }
 

@@ -4,6 +4,7 @@ import java.io.IOException;
 import java.sql.Timestamp;
 import java.util.Date;
 import java.util.HashMap;
+import java.util.List;
 import java.util.Map;
 
 import javax.annotation.Resource;
@@ -14,6 +15,7 @@ import net.sf.json.JSONObject;
 
 import org.apache.commons.codec.digest.DigestUtils;
 import org.apache.log4j.Logger;
+import org.slf4j.LoggerFactory;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
@@ -21,7 +23,9 @@ import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.servlet.ModelAndView;
 import org.springframework.web.servlet.mvc.support.RedirectAttributes;
 
+import com.kp.domain.KnowledgeWithBLOBs;
 import com.kp.domain.User;
+import com.kp.service.KnowledgeService;
 import com.kp.service.UserService;
 
 /**
@@ -31,9 +35,10 @@ import com.kp.service.UserService;
  */
 @Controller 
 public class UserController {
-	private static Logger logger = Logger.getLogger(UserController.class);
+	private static Logger log = Logger.getLogger(UserController.class);
 	@Resource
 	private UserService userService;
+	private KnowledgeService knowledgeService;
 	
     @RequestMapping(value="/checkUserName",method = RequestMethod.POST)  
     public String checkUserName(HttpServletRequest request, HttpServletResponse response) throws IOException{  
@@ -113,7 +118,7 @@ public class UserController {
     @RequestMapping(value="/login")
     public String Userlogin(User user, HttpServletRequest request, RedirectAttributes redirectAttributes,
 			@RequestParam(value = "kaptcha", required = true) String kaptchaReceived) {
-
+    	
 		// test output
     	String psw = request.getParameter("userpsw");
 		System.out.println("username:" + user.getUserName());
@@ -131,6 +136,15 @@ public class UserController {
 			//userService.updateUserNameSelective(dbuser);
 			request.getSession().setAttribute("username", dbuser.getUserName());
 			request.getSession().setAttribute("userId", dbuser.getUserId());
+			
+			//展示通知审核的知识
+			//List<KnowledgeWithBLOBs> listKnowledge=knowledgeService.listKnowledge(0);
+			//log.info(listKnowledge);
+			//将其存入session
+			//request.setAttribute("listKnowledge",listKnowledge);
+			//test
+			//List<KnowledgeWithBLOBs> xx= knowledgeService.selectByPrimaryKey(1);
+			//request.setAttribute("listKnowledge",xx);
 			return "user/index";
 		}
 

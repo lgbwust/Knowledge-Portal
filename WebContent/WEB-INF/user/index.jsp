@@ -70,10 +70,43 @@
 			</div>
 			<div class="left_side">
             	
-				<h2><a href="#">知识列表</a></h2>
+				<h2><a href="<%=basePath %>showinfo.do">知识列表</a></h2>
 				
 				<h3>这里，您将看到本站所有知识资料</h3>
-			
+			    <c:forEach items="${xx}" var="xx" varStatus="status">
+                <table border="2" align="center">
+                <tr>
+                    <td >知识编号:</td>
+                    <td>${xx.kid} </td>
+                </tr>
+
+                <tr>
+                    <td >用户ID:</td>
+                    <td>${xx.userId}</td>
+                </tr>
+                <tr>
+                    <td>知识标题:</td>
+                    <td>${xx.title}</td>
+                </tr>
+                <tr>
+                    <td>知识内容:</td>
+                    <td>${xx.content}</td>
+                </tr>
+                <tr>
+                    <td>附加说明:</td>
+                    <td>${xx.extra}</td>
+                </tr>
+                <tr>
+                    <td>知识类别:</td>
+                    <td>${xx.cid}</td>
+                </tr>
+                <tr>
+                    <td>知识状态:</td>
+                    <td>${xx.status}</td>
+                </tr>
+                </table>
+            </c:forEach>
+			    
 				<div class="img"></div>
 				
 				
