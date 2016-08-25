@@ -13,7 +13,7 @@
     <context-param>
         <param-name>contextConfigLocation</param-name>
         <param-value>
-            classpath:applicationContext.xml
+            classpath:config/applicationContext.xml
         </param-value>
     </context-param>
 
@@ -38,7 +38,7 @@
         <init-param>
             <!--用于标明spring-mvc.xml配置的位置,我是存放在config文件夹下-->
             <param-name>contextConfigLocation</param-name>
-            <param-value>classpath:spring-mvc.xml</param-value>
+            <param-value>classpath:config/spring-mvc.xml</param-value>
         </init-param>
         <load-on-startup>1</load-on-startup>
     </servlet>

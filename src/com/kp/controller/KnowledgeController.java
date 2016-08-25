@@ -70,7 +70,7 @@ public class KnowledgeController{
 	//知识点展示功能实现
 	@RequestMapping(value="/showinfo")
 	public String showKnowledge(HttpServletRequest request){
-		List<KnowledgeWithBLOBs> xx= knowledgeService.selectByPrimaryKey(1);
+		List<KnowledgeWithBLOBs> xx= knowledgeService.selectByPrimaryKey(3);
 		//List<KnowledgeWithBLOBs> xx=knowledgeService.listKnowledge(0);
 		request.setAttribute("xx",xx);
 		return "user/index";

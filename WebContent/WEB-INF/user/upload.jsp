@@ -89,7 +89,12 @@
                         </tr>
                         <tr>
                         	<td>文件说明</td>
-                            <td><input type="text" name="kkeyword" /></td>
+                            <td><input type="text" name="extraInfo" /></td>
+                        </tr>
+                        
+                         <tr>
+                        	<td>上传文件</td>
+                            <td><input type="file" name="myfiles" /></td>
                         </tr>
                         
                         </table>
