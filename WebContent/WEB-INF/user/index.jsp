@@ -82,7 +82,7 @@
 
                 <tr>
                     <td >用户ID:</td>
-                    <td>${xx.userId}</td>
+                    <td>${xx.user.getUserName()}</td>
                 </tr>
                 <tr>
                     <td>知识标题:</td>
@@ -98,7 +98,7 @@
                 </tr>
                 <tr>
                     <td>知识类别:</td>
-                    <td>${xx.cid}</td>
+                    <td>${xx.category.getCname()}</td>
                 </tr>
                 <tr>
                     <td>知识状态:</td>
