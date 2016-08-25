@@ -47,7 +47,11 @@
         <!-- 拦截所有*.do 的请求,交给DispatcherServlet处理,性能最好 -->
         <url-pattern>*.do</url-pattern>
     </servlet-mapping>
-
+    
+        <!-- 设置session失效时间为30分钟 -->  
+    <session-config>  
+        <session-timeout>30</session-timeout>  
+    </session-config>  
 
 
     <!--用于设定默认首页-->

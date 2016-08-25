@@ -38,6 +38,20 @@
         <property name="maxInMemorySize" value="40960" />  
     </bean> 
     
+      <!--配置拦截器, 多个拦截器,顺序执行 --> 
+	<mvc:interceptors>  
+		<mvc:interceptor>  
+			<!-- 
+				/**的意思是所有文件夹及里面的子文件夹
+				/*是所有文件夹，不含子文件夹
+				/是web项目的根目录 
+			-->
+			<mvc:mapping path="/user/**" />
+			
+			<bean class="com.kp.interceptor.UserInterceptor"></bean>  
+		</mvc:interceptor>
+	</mvc:interceptors>
+    
     <!--配置拦截器, 多个拦截器,顺序执行 -->
     <!--<mvc:interceptors>-->
         <!--<mvc:interceptor>-->

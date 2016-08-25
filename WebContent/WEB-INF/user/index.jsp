@@ -81,7 +81,7 @@
                 </tr>
 
                 <tr>
-                    <td >用户ID:</td>
+                    <td >上传者:</td>
                     <td>${xx.user.getUserName()}</td>
                 </tr>
                 <tr>

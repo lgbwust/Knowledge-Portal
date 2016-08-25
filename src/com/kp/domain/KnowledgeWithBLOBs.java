@@ -26,7 +26,15 @@ public class KnowledgeWithBLOBs extends Knowledge {
 	 * @mbggenerated
 	 */
 	private String extra;
-
+	
+	/**
+	 * 此得添加user和category是用于MyBatis中多表联合查询
+	 * 通过保存结果到List中前台通过EL表达式取出
+	 * e.g 
+	 * List xx
+	 * ${xx.user.getUserName}
+	 * ${xx.category.getCname}
+	 */
 	private User user;
 	private Category category;
 

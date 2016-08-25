@@ -10,6 +10,7 @@ import java.util.Map;
 import javax.annotation.Resource;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
+import javax.servlet.http.HttpSession;
 
 import net.sf.json.JSONObject;
 
@@ -192,9 +193,12 @@ public class UserController {
      * @return
      */
     @RequestMapping(value = "/loginout")
-	public String LoginOut(HttpServletRequest request) {
-		request.getSession().removeAttribute("username");
-		request.getSession().removeAttribute("userId");
+	public String LoginOut(HttpServletRequest request,HttpSession session) throws Exception {
+		//request.getSession().removeAttribute("username");
+		//request.getSession().removeAttribute("userId");
+    	//清除当前用户中的所有session
+    	//request.getSession().invalidate(); 
+    	session.invalidate();  
 		return "user/login";
 	}
 }
