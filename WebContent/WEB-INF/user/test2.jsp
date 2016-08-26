@@ -38,16 +38,19 @@
 <body>  
     <h2>用户信息列表</h2>  
     <p>You can add User,or Edit_User、Delete_User if you selected an user</p>  
-    <table id="dg" title="用户操作" class="easyui-datagrid" style="width:700px;height:250px"  
-            url="<%=request.getContextPath()%>/userList.html"  
+    <table id="dg" title="知识操操作" class="easyui-datagrid" style="width:700px;height:250px"  
+            url="<%=request.getContextPath()%>/admin/knowledgeList.html"  
             toolbar="#toolbar" pagination="true"  
             rownumbers="true" fitColumns="true" singleSelect="true">  
         <thead>  
             <tr >  
-                <th field="userId" width="30" >用户ID~</th>  
-                <th field="userName" width="50">姓名~</th>  
-                <th field="userPassword" width="30">密码~</th>  
-                <th field="userEmail" width="50">电子邮件~</th>    
+                <th field="kid" width="30" >知识ID</th>  
+                <th field="user" width="50">上传者</th>  
+                <th field="title" width="30">标题</th>  
+                <th field="content" width="50">内容</th>
+                <th field="extra" width="30" >说明</th>  
+                <th field="category" width="50">类别</th>  
+                <th field="status" width="30">审核状态</th>     
             </tr>  
         </thead>  
     </table>  

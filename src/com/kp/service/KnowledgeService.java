@@ -22,4 +22,8 @@ public interface KnowledgeService {
     int updateByPrimaryKeyWithBLOBs(KnowledgeWithBLOBs record);
 
     int updateByPrimaryKey(Knowledge record);
+    
+    List<KnowledgeWithBLOBs> getAllKnowledge();
+    
+    List<KnowledgeWithBLOBs> getKnowledgeByPage(int m,int n);
 }

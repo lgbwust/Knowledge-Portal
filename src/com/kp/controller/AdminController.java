@@ -1,6 +1,7 @@
 package com.kp.controller;
 
 import java.io.IOException;
+import java.io.UnsupportedEncodingException;
 import java.util.List;
 
 import javax.annotation.Resource;
@@ -57,7 +58,7 @@ public class AdminController extends JsonUtil {
 		if(admin!=null&&admin.getAdminPsw().equals(psw)){
 			//将管理员名字保存到session中以便前台获取
 			request.getSession().setAttribute("adname", name);
-			return "admin/index";
+			return "admin/test";
 		}
 		else{
 			request.getSession().setAttribute("admsg", "登录失败,用户名或密码错误~~~ :)");
@@ -66,6 +67,14 @@ public class AdminController extends JsonUtil {
 		//return "admin/adminlogin";
 	}
 	
+	/**
+	 * 用户管理
+	 * @param page
+	 * @param rows
+	 * @param response
+	 * @param model
+	 * @throws IOException
+	 */
 	@RequestMapping(value="/userList")
 	public  void userList(int page,int rows,HttpServletResponse response,Model model) throws IOException{  
         response.setContentType("application/json; charset=utf-8");  
@@ -78,5 +87,38 @@ public class AdminController extends JsonUtil {
         System.out.println("日志信息一定要长这样才看得见啊"+start);
         System.out.println("日志信息一定要长这样才看得见啊"+end);
         this.toBeJson(uList, total, response);  
-    }  
+    }
+	
+	 @RequestMapping("/addUser")  
+	 public void addUser(HttpServletRequest request,User user){    
+	        userService.insert(user);
+	    }
+	 
+	 @RequestMapping(value="/deleteUser")
+	 public void deleteUser(HttpServletRequest request){
+		 int userId=Integer.parseInt(request.getParameter("userId"));
+		 userService.deleteByPrimaryKey(userId);
+	 }
+	 
+	 @RequestMapping(value="/updateUser")
+	 public void updateUser(HttpServletRequest request,User user) throws UnsupportedEncodingException{  
+	        userService.updateUserNameSelective(user);
+	    }
+	 
+	 /**
+	  * 知识审核及其它操作部分
+	  */
+	 @RequestMapping(value="/admin/knowledgeList")
+	 public  void knowledgeList(int page,int rows,HttpServletResponse response,Model model) throws IOException{  
+		 response.setContentType("application/json; charset=utf-8");  
+	        //求得开始记录与结束记录  
+	        int start = (page-1)*rows;  
+	        int end = page * rows;  
+	        //把总记录和当前记录写到前台  
+	        int total = knowledgeService.getAllKnowledge().size(); //userMapper.findUsersList().size();  
+	        List<KnowledgeWithBLOBs> kList = knowledgeService.getKnowledgeByPage(start, end);//userMapper.findUsersListByPage(start, end);
+	        System.out.println("日志信息一定要长这样才看得见啊"+start);
+	        System.out.println("日志信息一定要长这样才看得见啊"+end);
+	        this.toBeJson(kList, total, response);    
+	 }
 }

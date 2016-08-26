@@ -199,4 +199,22 @@
       status = #{status,jdbcType=INTEGER}
     where kid = #{kid,jdbcType=INTEGER}
   </update>
+  
+    <!-- 自己添加的部分 -->
+  <select id="getAllKnowledge" resultMap="ResultKnowledgeMap">
+  SELECT
+  kid,user_name,title,content,extra,cname,status
+  FROM knowledge k,category c,user u
+  WHERE k.user_id=u.user_id AND k.cid=c.cid
+  </select>
+  
+  <!-- 分页使用SQL -->
+     <select id="getKnowledgeByPage" resultMap="ResultKnowledgeMap">
+        SELECT
+        kid,user_name,title,content,extra,cname,status
+        FROM knowledge k,category c,user u
+        WHERE k.user_id=u.user_id AND k.cid=c.cid
+        LIMIT #{0},#{1}
+     </select>
+  
 </mapper>

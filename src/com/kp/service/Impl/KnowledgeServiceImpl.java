@@ -97,4 +97,24 @@ public class KnowledgeServiceImpl implements KnowledgeService {
         return null; 
 	}
 
+	@Override
+	public List<KnowledgeWithBLOBs> getAllKnowledge() {
+		try {  
+            return knowledgeDao.getAllKnowledge();
+        } catch (Exception e) {  
+            e.printStackTrace();  
+        }  
+        return null; 
+	}
+
+	@Override
+	public List<KnowledgeWithBLOBs> getKnowledgeByPage(int m, int n) {
+		try {  
+            return knowledgeDao.getKnowledgeByPage(m, n);
+        } catch (Exception e) {  
+            e.printStackTrace();  
+        }  
+        return null; 
+	}
+
 }
