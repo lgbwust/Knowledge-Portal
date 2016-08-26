@@ -28,7 +28,7 @@ public class BaseController {
     }
     @RequestMapping(value = "/btn2")
     public String S2_Page(HttpServletRequest request){
-        return  "user/register";
+        return  "user/test";
     }
     @RequestMapping(value = "/btn3")
     public String S3_Page(HttpServletRequest request){

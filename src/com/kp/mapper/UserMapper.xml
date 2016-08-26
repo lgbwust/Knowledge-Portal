@@ -132,4 +132,20 @@
       user_email = #{userEmail,jdbcType=VARCHAR}
     where user_id = #{userId,jdbcType=INTEGER}
   </update>
+  
+  <!-- 自己添加的部分 -->
+  <select id="getAllUser" resultMap="BaseResultMap">
+  SELECT
+  *
+  FROM user 
+  </select>
+  
+  <!-- 分页使用SQL -->
+     <select id="getUserByPage" resultMap="BaseResultMap">
+        SELECT
+        *
+        FROM user
+        LIMIT #{0},#{1}
+     </select>
+  
 </mapper>

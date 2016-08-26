@@ -16,7 +16,7 @@
 	<div class="content">
 		<div id="top">
 			<div class="padding"> 
-				欢迎！&nbsp;${username},${userId} | <a href="<%=basePath%>loginout.do"><button name="logout" >注销</button></a>  
+				欢迎！&nbsp;${username},${userId} | <a href="<%=basePath%>loginout.html"><button name="logout" >注销</button></a>  
 			</div>
 		</div>
 		<div id="header">
@@ -34,10 +34,10 @@
 		<div id="subheader">
 			<div id="menu">
 			  	<ul>
-					<li><a href="<%=basePath %>ind.do">主页</a></li>
-					<li><a href="<%=basePath %>add.do">知识上传</a></li>
-					<li><a href="<%=basePath %>sea.do">知识搜索</a></li>
-					<li><a href="<%=basePath %>upl.do">文件上传</a></li>
+					<li><a href="<%=basePath %>ind.html">主页</a></li>
+					<li><a href="<%=basePath %>add.html">知识上传</a></li>
+					<li><a href="<%=basePath %>sea.html">知识搜索</a></li>
+					<li><a href="<%=basePath %>upl.html">文件上传</a></li>
 					<li><a href="userinfo.jsp">个人信息</a></li>
       			</ul>
 			</div>
@@ -69,44 +69,35 @@
 				</div>
 			</div>
 			<div class="left_side">
-            	
-				<h2><a href="<%=basePath %>showinfo.do">知识列表</a></h2>
+  	
+				<h2><a href="<%=basePath %>showinfo.html">知识列表</a></h2>
 				
 				<h3>这里，您将看到本站所有知识资料</h3>
-			    <c:forEach items="${xx}" var="xx" varStatus="status">
-                <table border="2" align="center">
-                <tr>
-                    <td >知识编号:</td>
-                    <td>${xx.kid} </td>
-                </tr>
 
-                <tr>
-                    <td >上传者:</td>
-                    <td>${xx.user.getUserName()}</td>
-                </tr>
-                <tr>
-                    <td>知识标题:</td>
-                    <td>${xx.title}</td>
-                </tr>
-                <tr>
-                    <td>知识内容:</td>
-                    <td>${xx.content}</td>
-                </tr>
-                <tr>
-                    <td>附加说明:</td>
-                    <td>${xx.extra}</td>
-                </tr>
-                <tr>
-                    <td>知识类别:</td>
-                    <td>${xx.category.getCname()}</td>
-                </tr>
-                <tr>
-                    <td>知识状态:</td>
-                    <td>${xx.status}</td>
-                </tr>
-                </table>
-            </c:forEach>
-			    
+            
+                     <table class="table table-bordered" style="font-family: 微软雅黑">
+<tr>
+<th style="text-align: center; width: 5%">知识编号</th>
+<th style="text-align: center; width: 10%">上传者</th>
+<th style="text-align: center; width: 10%">知识标题</th>
+<th style="text-align: center; width: 10%">知识内容</th>
+<th style="text-align: center; width: 10%">附加说明</th>
+<th style="text-align: center; width: 10%">知识类别</th>
+<th style="text-align: center; width: 10%">知识状态</th>
+</tr> 
+<c:forEach items="${xx}" var="xx" varStatus="status">
+<tr>
+<td>${xx.kid}</td>
+<td>${xx.user.getUserName()}</td>
+<td>${xx.title}</td>
+<td>${xx.content}</td>
+<td>${xx.extra}</td>
+<td>${xx.category.getCname()}</td>
+<td>${xx.status}</td>
+</tr>
+</c:forEach>
+</table>
+		    
 				<div class="img"></div>
 				
 				

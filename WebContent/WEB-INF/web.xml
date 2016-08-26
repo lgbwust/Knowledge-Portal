@@ -45,7 +45,7 @@
     <servlet-mapping>
         <servlet-name>dispatcher</servlet-name>
         <!-- 拦截所有*.do 的请求,交给DispatcherServlet处理,性能最好 -->
-        <url-pattern>*.do</url-pattern>
+        <url-pattern>*.html</url-pattern>
     </servlet-mapping>
     
     
@@ -57,7 +57,7 @@
 
     <!--用于设定默认首页-->
     <welcome-file-list>
-        <welcome-file>/mainPage.do</welcome-file>
+        <welcome-file>/mainPage.html</welcome-file>
     </welcome-file-list>
 
   	<error-page>

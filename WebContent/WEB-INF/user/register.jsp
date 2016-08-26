@@ -14,7 +14,7 @@
 </head>  
 <body>    
 <div id="reg">    
-<FORM name="formUser"  action="<%=request.getContextPath()%>/register.do"  method=post>    
+<FORM name="formUser"  action="<%=request.getContextPath()%>/register.html"  method=post>    
   <BR>    
   <TABLE width="100%" align=center border=0>    
     <TBODY>    

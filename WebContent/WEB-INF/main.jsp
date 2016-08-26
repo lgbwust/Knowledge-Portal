@@ -13,9 +13,9 @@
 <body>
 <center><h1>欢迎登录知识门户系统</h1></center>
 <center>
-<a href="<%=basePath%>btn1.do"><button>登入</button></a>
-<a href="<%=basePath%>btn2.do"><button>注册</button></a>
-<a href="<%=basePath%>btn3.do"><button>登入管理后台</button></a>
+<a href="<%=basePath%>btn1.html"><button>登入</button></a>
+<a href="<%=basePath%>btn2.html"><button>注册</button></a>
+<a href="<%=basePath%>btn3.html"><button>登入管理后台</button></a>
 </center>
 </body>
 </html>

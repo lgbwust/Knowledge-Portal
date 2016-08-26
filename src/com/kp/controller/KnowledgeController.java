@@ -14,8 +14,12 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.servlet.ModelAndView;
 
+import com.kp.domain.File;
 import com.kp.domain.KnowledgeWithBLOBs;
+import com.kp.domain.User;
+import com.kp.service.FileService;
 import com.kp.service.KnowledgeService;
+import com.kp.service.UserService;
 /**
  * 添加知识
  * @author fiberhome
@@ -23,8 +27,11 @@ import com.kp.service.KnowledgeService;
  */
 @Controller
 public class KnowledgeController{
+	//注意！！！每一个service都要进行注解，否则找不到~~~
 	@Resource
 	private KnowledgeService knowledgeService;
+	private UserService userService;
+	private FileService fileService;
 	
 	//添加知识点
 	@RequestMapping(value="/addknowledge",method=RequestMethod.POST)
@@ -71,7 +78,11 @@ public class KnowledgeController{
 	@RequestMapping(value="/showinfo")
 	public String showKnowledge(HttpServletRequest request){
 		//List<KnowledgeWithBLOBs> xx= knowledgeService.selectByPrimaryKey(3);
+		//展示知识点~~~
 		List<KnowledgeWithBLOBs> xx=knowledgeService.listKnowledge(0);
+		//List<User> xx=userService.getAllUser();
+		//User xx=userService.selectByPrimaryKey(1);
+		//File xx=fileService.selectByPrimaryKey(1);
 		request.setAttribute("xx",xx);
 		return "user/index";
 	}

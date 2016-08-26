@@ -9,7 +9,7 @@
 <title>管理员登录页面</title>
 </head>
 <body>
-<form action="${pageContext.request.contextPath}/adminlogin.do" method="post">
+<form action="${pageContext.request.contextPath}/adminlogin.html" method="post">
 <table width="300" border="1" align="center">
     <tr>
       <td colspan="2">管理员登录</td>

@@ -1,16 +1,29 @@
 package com.kp.controller;
 
+import java.io.IOException;
+import java.util.List;
+
 import javax.annotation.Resource;
 import javax.servlet.http.HttpServletRequest;
+import javax.servlet.http.HttpServletResponse;
 
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.stereotype.Controller;
+import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
+import org.springframework.web.bind.annotation.ResponseBody;
 
 import com.kp.domain.Admin;
+import com.kp.domain.KnowledgeWithBLOBs;
+import com.kp.domain.User;
 import com.kp.service.AdminService;
+import com.kp.service.FileService;
+import com.kp.service.KnowledgeService;
+import com.kp.service.UserService;
+import com.kp.util.JsonUtil;
+
 
 /**
  * 后台管理功能
@@ -19,12 +32,18 @@ import com.kp.service.AdminService;
  *
  */
 @Controller
-public class AdminController {
+public class AdminController extends JsonUtil {
 	//添加log信息
 	private final Logger log = LoggerFactory.getLogger(AdminController.class);
 	
 	@Resource
 	private AdminService adminService;
+	@Resource
+	private UserService userService;
+	@Resource
+	private FileService fileService;
+	@Resource
+	private KnowledgeService knowledgeService;
 
 	@RequestMapping(value = "/adminlogin", method = RequestMethod.POST)
 	public String adminlogin(HttpServletRequest request) {
@@ -46,5 +65,18 @@ public class AdminController {
 			}
 		//return "admin/adminlogin";
 	}
-
+	
+	@RequestMapping(value="/userList")
+	public  void userList(int page,int rows,HttpServletResponse response,Model model) throws IOException{  
+        response.setContentType("application/json; charset=utf-8");  
+        //求得开始记录与结束记录  
+        int start = (page-1)*rows;  
+        int end = page * rows;  
+        //把总记录和当前记录写到前台  
+        int total = userService.getAllUser().size(); //userMapper.findUsersList().size();  
+        List<User> uList = userService.getUserByPage(start, end);//userMapper.findUsersListByPage(start, end);
+        System.out.println("日志信息一定要长这样才看得见啊"+start);
+        System.out.println("日志信息一定要长这样才看得见啊"+end);
+        this.toBeJson(uList, total, response);  
+    }  
 }

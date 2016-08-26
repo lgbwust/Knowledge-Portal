@@ -15,7 +15,7 @@
 	<div class="content">
 		<div id="top">
 			<div class="padding">
-				欢迎！&nbsp; ${username} | <a href="<%=basePath%>loginout.do"><button name="logout" >注销</button></a>
+				欢迎！&nbsp; ${username} | <a href="<%=basePath%>loginout.html"><button name="logout" >注销</button></a>
 			</div>
 		</div>
 		<div id="header">
@@ -30,10 +30,10 @@
         <div id="subheader">
 			<div id="menu">
 			  	<ul>
-					<li><a href="<%=basePath %>ind.do">主页</a></li>
-					<li><a href="<%=basePath %>add.do">知识上传</a></li>
-					<li><a href="<%=basePath %>sea.do">知识搜索</a></li>
-					<li><a href="<%=basePath %>upl.do">文件上传</a></li>
+					<li><a href="<%=basePath %>ind.html">主页</a></li>
+					<li><a href="<%=basePath %>add.html">知识上传</a></li>
+					<li><a href="<%=basePath %>sea.html">知识搜索</a></li>
+					<li><a href="<%=basePath %>upl.html">文件上传</a></li>
 					<li><a href="userinfo.jsp">个人信息</a></li>
       			</ul>
 			</div>
@@ -41,7 +41,7 @@
         
 		
 		<div id="main">
-		您当前的位置 > <a href="<%=basePath %>ind.do">主页</a> > 文件上传
+		您当前的位置 > <a href="<%=basePath %>ind.html">主页</a> > 文件上传
 			<div class="right_side">
 				
 				<div class="nav">
@@ -71,7 +71,7 @@
 				<h2><a href="#">文件上传</a></h2>
 				<h3>欢迎上传文件</h3>
                 <div class="register">
-                <form action="<%=basePath %>uploadFile.do" method="post">
+                <form action="<%=basePath %>uploadFile.html" method="post">
                 	<table border="0" cellspacing="0">
                	    	<tr>
                         	<td>*文件名：</td>

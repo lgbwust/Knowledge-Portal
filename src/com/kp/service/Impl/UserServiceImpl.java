@@ -1,5 +1,7 @@
 package com.kp.service.Impl;
 
+import java.util.List;
+
 import javax.annotation.Resource;
 
 import org.springframework.stereotype.Service;
@@ -92,6 +94,28 @@ public class UserServiceImpl implements UserService {
 	            e.printStackTrace();  
 	        }  
 	        return 0; 
+	}
+
+	@Override
+	public List<User> getAllUser() {
+		try {  
+            return userDao.getAllUser();
+        } catch (Exception e) {  
+            e.printStackTrace();
+            System.out.println("getUser出现了异常"+e.getMessage());
+        }  
+        return null; 
+	}
+
+	@Override
+	public List<User> getUserByPage(int m, int n) {
+		try {  
+            return userDao.getUserByPage(m, n);
+        } catch (Exception e) {  
+            e.printStackTrace(); 
+            System.out.println("getUserByPage出现了异常"+e.getMessage());
+        }  
+        return null; 
 	}
 
 

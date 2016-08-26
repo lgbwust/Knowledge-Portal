@@ -1,5 +1,7 @@
 package com.kp.service;
 
+import java.util.List;
+
 import com.kp.domain.User;
 
 public interface UserService {
@@ -11,4 +13,8 @@ public interface UserService {
 	public User findByEmail(String userEmail);
 	public int updateUserNameSelective(User record);
 	public int updateByPrimaryKey(User record);
+	//
+	public List<User> getAllUser();
+	    
+	public List<User> getUserByPage(int m,int n);
 }
