@@ -21,3 +21,5 @@
                   问题：使用每一个Service都要使用Resource进行注解，否则Spring会报错，提示空指针异常~~~
                   
       - 2016/8/27-28 希望能够解决easyui中Json对象取出属性值的问题以及完善后台的部分模块，解决文档的知识的审核功能~
+      
+                     easyui field 获取对象属性的值方法：'http://blog.csdn.net/os4key/article/details/18305519'
