@@ -39,37 +39,13 @@
 					<li><a href="<%=basePath %>add.html">知识上传</a></li>
 					<li><a href="<%=basePath %>sea.html">知识搜索</a></li>
 					<li><a href="<%=basePath %>upl.html">文件上传</a></li>
-					<li><a href="userinfo.jsp">个人信息</a></li>
       			</ul>
 			</div>
 		</div>
         
         <div id="main">
 		您当前的位置 > <a href="<%=basePath %>ind.html">主页</a> > 知识上传
-			<div class="right_side">
-				
-				<div class="nav">
-				<h2>推荐知识</h2>
-					<ul>
-					
-					</ul>
-				
-				<h2>知识贡献排行</h2>
-					<ul>
-						
-					</ul>
-				
-					
-					<br />
-					<h2>最近登录</h2>
-					<ul>
-					
-						
-					</ul>
-				
-				
-				</div>
-			</div>
+			
 			<div class="left_side">
             	
 				<h2><a href="#">新知识上传</a></h2>

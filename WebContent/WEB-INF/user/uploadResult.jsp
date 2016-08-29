@@ -8,7 +8,7 @@
     String path = request.getContextPath();
     String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.getServerPort()+path+"/";
 %>
-<title>添加结果</title>
+<title>文件上传结果</title>
 <link rel="stylesheet" href="css/style.css">
 </head>
 <body>
