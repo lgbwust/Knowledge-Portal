@@ -75,6 +75,12 @@ public class AdminController extends JsonUtil {
 		//return "admin/adminlogin";
 	}
 	
+	@RequestMapping(value="/adminloginout")
+	public String adminloginout(HttpServletRequest request){
+		request.removeAttribute("adname");
+		return "admin/adminlogin";
+	}
+	
 	/**
 	 * 获取系统菜单
 	 * @return

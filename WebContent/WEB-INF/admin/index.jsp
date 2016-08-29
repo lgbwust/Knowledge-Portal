@@ -63,10 +63,10 @@
     <body class="easyui-layout">  
         <!-- 正上方panel -->  
         <div region="north" style="height:100px;padding:10px;" >
-        	<center><h2>欢迎<%=request.getSession().getAttribute("user") %>登录系统</h2></center>
+        	<center><h2>欢迎<%=request.getSession().getAttribute("adname") %>登录系统</h2></center>
          
         <div style="text-align: right;">
-                当前时间：<b id="date"></b> &nbsp;&nbsp; <a href="./loginout"><b>注销</b></a>
+                当前时间：<b id="date"></b> &nbsp;&nbsp; <a href="./adminloginout.html"><b>注销</b></a>
             </div>
             </div> 
 		<!-- 左侧菜单 -->
@@ -79,7 +79,7 @@
             <div class="easyui-tabs" id="mainTabs" fit="true" border="false">  
                 <div title="欢迎页" style="padding:20px;overflow:hidden;">   
                     <div style="margin-top:20px;">  
-                        <h3>你好，欢迎来到权限管理系统</h3>  
+                        <h3>你好，欢迎来到后台管理系统</h3>  
                     </div>  
                 </div>  
             </div>  
@@ -89,14 +89,13 @@
         <div data-options="region:'east',iconCls:'icon-reload',split:false"
         title="日历信息" style="width: 240px;">
         <div class="easyui-calendar" style="width: 230px; height: 230px;"></div>
-        <div style="width: 230px">苦心人，天不负，卧薪尝胆，百二秦关今属楚</div>
+        <div style="width: 230px">努力Coding中</div>
     </div>
         
         <!-- 正下方panel -->  
         <div region="south" style="height:50px;" align="center">  
-            <label>Author: test  
+            <label>Author: NO.2  
                 	<br/>  
-              	  Time：2016-8-8 
             </label>  
         </div>  
     </body>

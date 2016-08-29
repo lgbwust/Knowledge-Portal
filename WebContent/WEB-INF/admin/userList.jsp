@@ -1,17 +1,12 @@
-<%@ page language="java" contentType="text/html; charset=UTF-8"  
-    pageEncoding="UTF-8"%>  
-<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">  
-<html>  
-<head>  
-<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">  
-<title>用户信息列表</title>  
-<link rel="stylesheet" type="text/css" href="<%=request.getContextPath() %>/easyui/themes/default/easyui.css">  
-<link rel="stylesheet" type="text/css" href="<%=request.getContextPath() %>/easyui/themes/icon.css">  
-<link rel="stylesheet" type="text/css" href="<%=request.getContextPath() %>/easyui/themes/color.css">  
-<link rel="stylesheet" type="text/css" href="<%=request.getContextPath() %>/easyui/demo/demo.css">
-<link rel="stylesheet" type="text/css" href="<%=request.getContextPath() %>/css/userList.css"> 
-<script type="text/javascript" src="<%=request.getContextPath() %>/easyui/jquery.min.js"></script>  
-<script type="text/javascript" src="<%=request.getContextPath() %>/easyui/jquery.easyui.min.js"></script>  
+<%@ page language="java" contentType="text/html; charset=UTF-8"
+	pageEncoding="UTF-8"%>
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<html>
+<head>
+<title>用户管理</title>
+<%@include file="/WEB-INF/include/easyui.jsp"%>
+<!-- 对话框的样式 -->
+<link href="${path}/css/userList.css" rel="stylesheet" type="text/css" />
 <style type="text/css">  
         #fm{  
             margin:0;  
