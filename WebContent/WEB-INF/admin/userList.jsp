@@ -8,7 +8,8 @@
 <link rel="stylesheet" type="text/css" href="<%=request.getContextPath() %>/easyui/themes/default/easyui.css">  
 <link rel="stylesheet" type="text/css" href="<%=request.getContextPath() %>/easyui/themes/icon.css">  
 <link rel="stylesheet" type="text/css" href="<%=request.getContextPath() %>/easyui/themes/color.css">  
-<link rel="stylesheet" type="text/css" href="<%=request.getContextPath() %>/easyui/demo/demo.css">  
+<link rel="stylesheet" type="text/css" href="<%=request.getContextPath() %>/easyui/demo/demo.css">
+<link rel="stylesheet" type="text/css" href="<%=request.getContextPath() %>/css/userList.css"> 
 <script type="text/javascript" src="<%=request.getContextPath() %>/easyui/jquery.min.js"></script>  
 <script type="text/javascript" src="<%=request.getContextPath() %>/easyui/jquery.easyui.min.js"></script>  
 <style type="text/css">  
