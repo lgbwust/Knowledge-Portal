@@ -1,11 +1,14 @@
 package com.kp.service.Impl;
 
+import java.util.List;
+
 import javax.annotation.Resource;
 
 import org.springframework.stereotype.Service;
 
 import com.kp.dao.AdminMapper;
 import com.kp.domain.Admin;
+import com.kp.domain.SysMenu;
 import com.kp.service.AdminService;
 
 @Service
@@ -78,6 +81,16 @@ public class AdminServiceImpl implements AdminService{
 	public Admin selectByName(String adminName) {
 		try {  
             return adminDao.selectByName(adminName);
+        } catch (Exception e) {  
+            e.printStackTrace();  
+        }  
+        return null; 
+	}
+
+	@Override
+	public List<SysMenu> getMenu() {
+		try {  
+            return adminDao.getMenu();
         } catch (Exception e) {  
             e.printStackTrace();  
         }  

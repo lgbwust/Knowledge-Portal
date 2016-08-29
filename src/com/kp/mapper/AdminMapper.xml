@@ -112,4 +112,14 @@
       admin_psw = #{adminPsw,jdbcType=VARCHAR}
     where admin_id = #{adminId,jdbcType=INTEGER}
   </update>
+  
+  <!-- 获取权限菜单 -->
+  <select id="getMenu" resultType="com.kp.domain.SysMenu">
+          SELECT m.id,m.text,m.parentId,m.iconCls,m.url
+		  FROM sysmenu m
+		  LEFT JOIN role_menu rm
+		  ON m.id = rm.menu_id 
+		  ORDER BY m.sequence
+  </select>
+  
 </mapper>

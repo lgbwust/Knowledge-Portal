@@ -7,7 +7,7 @@
 <script type="text/javascript">
 	$(function() {
 		$('#mainMenu').tree({
-			url : path+'/getMenu',
+			url : path+'/getMenu.html',
 			parentField : 'pid',
 			onClick : function(node) {
 				if (node.attributes.url) {

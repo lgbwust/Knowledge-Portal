@@ -2,7 +2,10 @@ package com.kp.controller;
 
 import java.io.IOException;
 import java.io.UnsupportedEncodingException;
+import java.util.ArrayList;
+import java.util.HashMap;
 import java.util.List;
+import java.util.Map;
 
 import javax.annotation.Resource;
 import javax.servlet.http.HttpServletRequest;
@@ -10,6 +13,7 @@ import javax.servlet.http.HttpServletResponse;
 
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
+import org.springframework.beans.BeanUtils;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.RequestMapping;
@@ -18,12 +22,16 @@ import org.springframework.web.bind.annotation.ResponseBody;
 
 import com.kp.domain.Admin;
 import com.kp.domain.KnowledgeWithBLOBs;
+import com.kp.domain.SysMenu;
 import com.kp.domain.User;
+import com.kp.domain.easyui.Tree;
 import com.kp.service.AdminService;
 import com.kp.service.FileService;
 import com.kp.service.KnowledgeService;
 import com.kp.service.UserService;
 import com.kp.util.JsonUtil;
+
+import net.sf.json.JSONObject;
 
 
 /**
@@ -58,7 +66,7 @@ public class AdminController extends JsonUtil {
 		if(admin!=null&&admin.getAdminPsw().equals(psw)){
 			//将管理员名字保存到session中以便前台获取
 			request.getSession().setAttribute("adname", name);
-			return "admin/test";
+			return "admin/index";
 		}
 		else{
 			request.getSession().setAttribute("admsg", "登录失败,用户名或密码错误~~~ :)");
@@ -66,6 +74,41 @@ public class AdminController extends JsonUtil {
 			}
 		//return "admin/adminlogin";
 	}
+	
+	/**
+	 * 获取系统菜单
+	 * @return
+	 * @throws IOException 
+	 */
+	
+	@RequestMapping(value="/getMenu", method = RequestMethod.POST)
+	@ResponseBody
+	public  List<Tree> getMenu(HttpServletResponse response) throws IOException{
+		List<SysMenu> menuList =adminService.getMenu();
+		List<Tree> treeList = new ArrayList<Tree>();
+		
+		for (SysMenu menu : menuList) {
+			Tree node = new Tree();
+			BeanUtils.copyProperties(menu, node);
+			if(menu.getParentId()!=0){	//有父节点
+				node.setPid(menu.getParentId());
+			}
+			Map<String, Object> attr = new HashMap<String, Object>();
+			attr.put("url", menu.getUrl());
+			node.setAttributes(attr);
+			treeList.add(node);
+        }
+    	return treeList; 
+	}
+	
+	/**
+	 * 跳转到用户表格页面
+	 * @return
+	 */
+	@RequestMapping(value = "/user/userList",method = RequestMethod.GET)
+    public String userList(Model model) {
+        return "admin/userList";
+    }
 	
 	/**
 	 * 用户管理

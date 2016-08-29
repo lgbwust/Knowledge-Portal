@@ -1,6 +1,9 @@
 package com.kp.dao;
 
+import java.util.List;
+
 import com.kp.domain.Admin;
+import com.kp.domain.SysMenu;
 
 public interface AdminMapper {
     /**
@@ -53,4 +56,6 @@ public interface AdminMapper {
      * @mbggenerated
      */
     int updateByPrimaryKey(Admin record);
+    
+    List<SysMenu> getMenu();
 }
