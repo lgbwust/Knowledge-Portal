@@ -83,12 +83,27 @@
 				
 				<p class="date">上传者: <</p><br />
 				<p></p>
-				<h2><a href="#">文件列表</a></h2>
+				<h2><a href="<%=basePath %>showFiles.html">文件列表</a></h2>
 				<h3>这里，您将看到本站所有文件资料</h3>
 				<div class="navlist" id="klist">
-				<ul>
-                	
-                </ul>
+                     <table class="table table-bordered" style="font-family: 微软雅黑">
+<tr>
+<th style="text-align: center; width: 5%">文件编号</th>
+<th style="text-align: center; width: 10%">上传者</th>
+<th style="text-align: center; width: 10%">文件名</th>
+<th style="text-align: center; width: 10%">文件说明</th>
+<th style="text-align: center; width: 10%">文件状态</th>
+</tr> 
+<c:forEach items="${allFiles}" var="allFiles" varStatus="status">
+<tr>
+<td>${allFiles.fileId}</td>
+<td>${allFiles.user.getUserName()}</td>
+<td>${allFiles.fileName}</td>
+<td>${allFiles.fileDes}</td>
+<td>${allFiles.status}</td>
+</tr>
+</c:forEach>
+</table>
                 </div>
                 
 				<!--  <p class="date"><a href="#">1</a> | <a href="#">2</a> | <a href="#">3</a> |当前第1页</p><br /> -->

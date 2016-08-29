@@ -1,5 +1,7 @@
 package com.kp.dao;
 
+import java.util.List;
+
 import com.kp.domain.File;
 
 public interface FileMapper {
@@ -50,4 +52,6 @@ public interface FileMapper {
      * @mbggenerated
      */
     int updateByPrimaryKey(File record);
+    
+    List<File> listFile(int i);
 }

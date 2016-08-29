@@ -91,6 +91,13 @@ public class FileController {
 
 	}
 
+	/**
+	 * 文件下载：点击文件名称实现下载功能
+	 * @param fileName
+	 * @param request
+	 * @param response
+	 * @return
+	 */
 	@RequestMapping("/download")
 	public String download(String fileName, HttpServletRequest request,
 			HttpServletResponse response) {
@@ -124,6 +131,18 @@ public class FileController {
             //  返回值要注意，要不然就出现下面这句错误！
             //java+getOutputStream() has already been called for this response
 		return null;
+	}
+	
+	/**
+	 * 显示文件列表
+	 * @param request
+	 * @return
+	 */
+	@RequestMapping(value="/showFiles")
+	public String showFiles(HttpServletRequest request){
+		List<File> allFiles=fileService.listFile(0);
+		request.setAttribute("allFiles",allFiles);
+		return "user/index";
 	}
 
 	/**

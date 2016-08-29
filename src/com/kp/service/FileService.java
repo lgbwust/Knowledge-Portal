@@ -1,5 +1,7 @@
 package com.kp.service;
 
+import java.util.List;
+
 import com.kp.domain.File;
 
 public interface FileService {
@@ -15,4 +17,6 @@ public interface FileService {
 	int updateByPrimaryKeySelective(File record);
 
 	int updateByPrimaryKey(File record);
+
+	List<File> listFile(int i);
 }
