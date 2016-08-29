@@ -54,6 +54,11 @@ public class AdminController extends JsonUtil {
 	@Resource
 	private KnowledgeService knowledgeService;
 
+	/**
+	 * 登录
+	 * @param request
+	 * @return
+	 */
 	@RequestMapping(value = "/adminlogin", method = RequestMethod.POST)
 	public String adminlogin(HttpServletRequest request) {
 		//test output
@@ -75,6 +80,11 @@ public class AdminController extends JsonUtil {
 		//return "admin/adminlogin";
 	}
 	
+	/**
+	 * 注销
+	 * @param request
+	 * @return
+	 */
 	@RequestMapping(value="/adminloginout")
 	public String adminloginout(HttpServletRequest request){
 		request.removeAttribute("adname");
@@ -83,10 +93,10 @@ public class AdminController extends JsonUtil {
 	
 	/**
 	 * 获取系统菜单
+	 * @param response
 	 * @return
-	 * @throws IOException 
+	 * @throws IOException
 	 */
-	
 	@RequestMapping(value="/getMenu", method = RequestMethod.POST)
 	@ResponseBody
 	public  List<Tree> getMenu(HttpServletResponse response) throws IOException{
@@ -114,6 +124,26 @@ public class AdminController extends JsonUtil {
 	@RequestMapping(value = "/user/userList",method = RequestMethod.GET)
     public String userList(Model model) {
         return "admin/userList";
+    }
+	
+	/**
+	 * 跳转到知识页面
+	 * @param model
+	 * @return
+	 */
+	@RequestMapping(value = "/kp/kpList",method = RequestMethod.GET)
+    public String kpList(Model model) {
+        return "admin/kpList";
+    }
+	
+	/**
+	 * 跳转到文件页面
+	 * @param model
+	 * @return
+	 */
+	@RequestMapping(value = "/file/fileList",method = RequestMethod.GET)
+    public String fileList(Model model) {
+        return "admin/fileList";
     }
 	
 	/**
