@@ -117,4 +117,32 @@ public class KnowledgeServiceImpl implements KnowledgeService {
         return null; 
 	}
 
+	@Override
+	public void checkKnowledge(int id) {
+		try {  
+           knowledgeDao.checkKnowledge(id);
+        } catch (Exception e) {  
+            e.printStackTrace();  
+        }  
+	}
+
+	@Override
+	public void editKnowledge(KnowledgeWithBLOBs kp) {
+		try {  
+	           knowledgeDao.editKnowledge(kp);
+	        } catch (Exception e) {  
+	            e.printStackTrace();  
+	        } 
+	}
+
+	@Override
+	public void deleteKnowledge(int parseInt) {
+		try {  
+	           knowledgeDao.deleteKnowledge(parseInt);
+	        } catch (Exception e) {  
+	            e.printStackTrace();  
+	        } 
+		
+	}
+
 }

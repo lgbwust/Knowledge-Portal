@@ -68,4 +68,10 @@ public interface KnowledgeMapper {
      * @mbggenerated
      */
     int updateByPrimaryKey(Knowledge record);
+    
+    void checkKnowledge(int id);
+    
+    void editKnowledge(KnowledgeWithBLOBs kp);
+
+	void deleteKnowledge(int parseInt);
 }

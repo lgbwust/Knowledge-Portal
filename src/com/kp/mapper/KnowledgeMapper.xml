@@ -216,5 +216,18 @@
         WHERE k.user_id=u.user_id AND k.cid=c.cid
         LIMIT #{0},#{1}
      </select>
-  
+     
+     <!-- 审核功能 -->
+     <update id="checkKnowledge" parameterType="com.kp.domain.Knowledge" >
+     update knowledge
+     set status = 1
+     where kid = #{kid}
+     </update>
+     
+     <!-- 删除 -->
+     <delete id="deleteKnowledge" parameterType="int">
+     delete from knowledge
+     where kid = #{kid}
+     </delete>
+     
 </mapper>

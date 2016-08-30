@@ -26,4 +26,10 @@ public interface KnowledgeService {
     List<KnowledgeWithBLOBs> getAllKnowledge();
     
     List<KnowledgeWithBLOBs> getKnowledgeByPage(int m,int n);
+    
+    void checkKnowledge(int id);
+
+	void editKnowledge(KnowledgeWithBLOBs kp);
+
+	void deleteKnowledge(int parseInt);
 }

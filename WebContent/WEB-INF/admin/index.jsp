@@ -2,7 +2,7 @@
 <!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
 <html>
 <head>
-<title>SpringMVCDemo</title>
+<title>知识门户后台管理系统</title>
 <%@include file="/WEB-INF/include/easyui.jsp"%>
 <script type="text/javascript">
 	$(function() {

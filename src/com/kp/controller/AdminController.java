@@ -25,6 +25,7 @@ import com.kp.domain.File;
 import com.kp.domain.KnowledgeWithBLOBs;
 import com.kp.domain.SysMenu;
 import com.kp.domain.User;
+import com.kp.domain.easyui.Json;
 import com.kp.domain.easyui.Tree;
 import com.kp.service.AdminService;
 import com.kp.service.FileService;
@@ -197,9 +198,28 @@ public class AdminController extends JsonUtil {
 	        //把总记录和当前记录写到前台  
 	        int total = knowledgeService.getAllKnowledge().size(); //userMapper.findUsersList().size();  
 	        List<KnowledgeWithBLOBs> kList = knowledgeService.getKnowledgeByPage(start, end);//userMapper.findUsersListByPage(start, end);
-	        System.out.println("日志信息一定要长这样才看得见啊"+start);
-	        System.out.println("日志信息一定要长这样才看得见啊"+end);
+	        //System.out.println("日志信息一定要长这样才看得见啊"+start);
+	        //System.out.println("日志信息一定要长这样才看得见啊"+end);
 	        this.toBeJson(kList, total, response);    
+	 }
+	 
+	 @RequestMapping(value="/admin/editKnowledge")
+	 public void editKnowledge(HttpServletRequest request,KnowledgeWithBLOBs kp){
+		 knowledgeService.updateByPrimaryKeySelective(kp);
+	 }
+	 
+	 @RequestMapping(value="/admin/deleteKnowledge")
+	 public void deleteKnowledge(HttpServletRequest request){
+		 String id = request.getParameter("kid"); 
+		 knowledgeService.deleteKnowledge(Integer.parseInt(id));
+	 }
+	 
+	 @RequestMapping(value="/admin/checkKnowledge")
+	 public void checkKnowledge(HttpServletRequest request){
+		 String id = request.getParameter("kid");  
+		 //test log
+		 System.out.println(id);
+		 knowledgeService.checkKnowledge(Integer.parseInt(id));
 	 }
 	 
 	 /**
