@@ -84,4 +84,24 @@ public class FileServiceImpl implements FileService {
 	        }  
 	        return null; 
 	}
+
+	@Override
+	public List<File> getAllFile() {
+		try {  
+            return fileDao.getAllFile();
+        } catch (Exception e) {  
+            e.printStackTrace();  
+        }  
+        return null; 
+	}
+
+	@Override
+	public List<File> getFileByPage(int m, int n) {
+		try {  
+            return fileDao.getFileByPage(m, n);
+        } catch (Exception e) {  
+            e.printStackTrace();  
+        }  
+        return null; 
+	}
 }

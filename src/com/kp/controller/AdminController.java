@@ -21,6 +21,7 @@ import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.ResponseBody;
 
 import com.kp.domain.Admin;
+import com.kp.domain.File;
 import com.kp.domain.KnowledgeWithBLOBs;
 import com.kp.domain.SysMenu;
 import com.kp.domain.User;
@@ -199,5 +200,22 @@ public class AdminController extends JsonUtil {
 	        System.out.println("日志信息一定要长这样才看得见啊"+start);
 	        System.out.println("日志信息一定要长这样才看得见啊"+end);
 	        this.toBeJson(kList, total, response);    
+	 }
+	 
+	 /**
+	  * 文件管理部分
+	  */
+	 @RequestMapping(value="/admin/fileList")
+	 public void fileList(int page,int rows,HttpServletResponse response,Model model) throws IOException{
+		 response.setContentType("application/json; charset=utf-8");  
+	        //求得开始记录与结束记录  
+	        int start = (page-1)*rows;  
+	        int end = page * rows;  
+	        //把总记录和当前记录写到前台  
+	        int total = fileService.getAllFile().size(); //userMapper.findUsersList().size();  
+	        List<File> fList = fileService.getFileByPage(start, end);//userMapper.findUsersListByPage(start, end);
+	        System.out.println("日志信息一定要长这样才看得见啊"+start);
+	        System.out.println("日志信息一定要长这样才看得见啊"+end);
+	        this.toBeJson(fList, total, response); 
 	 }
 }

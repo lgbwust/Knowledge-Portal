@@ -54,4 +54,8 @@ public interface FileMapper {
     int updateByPrimaryKey(File record);
     
     List<File> listFile(int i);
+    
+	List<File> getAllFile();
+
+	List<File> getFileByPage(int m,int n);
 }

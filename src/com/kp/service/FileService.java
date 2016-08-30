@@ -19,4 +19,8 @@ public interface FileService {
 	int updateByPrimaryKey(File record);
 
 	List<File> listFile(int i);
+
+	List<File> getAllFile();
+
+	List<File> getFileByPage(int m,int n);
 }

@@ -172,4 +172,21 @@
         FROM file F,user U
         WHERE F.user_id = U.user_id AND F.file_status = #{file_status}
     </select>
+    
+        <!-- 自己添加的部分 -->
+  <select id="getAllFile" resultMap="ResultFileMap">
+  SELECT
+  file_id,user_name,file_name,file_des,file_status
+  FROM file f,user u
+  WHERE f.user_id=u.user_id
+  </select>
+  
+  <!-- 分页使用SQL -->
+     <select id="getFileByPage" resultMap="ResultFileMap">
+        SELECT
+        file_id,user_name,file_name,file_des,file_status
+        FROM file f,user u
+        WHERE f.user_id=u.user_id
+        LIMIT #{0},#{1}
+     </select>
 </mapper>

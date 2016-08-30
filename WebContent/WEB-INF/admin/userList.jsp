@@ -33,17 +33,17 @@
 </head>  
 <body>  
     <h2>用户信息列表</h2>  
-    <p>You can add User,or Edit_User、Delete_User if you selected an user</p>  
+    <p>增加、编辑和删除用户</p>  
     <table id="dg" title="用户操作" class="easyui-datagrid" style="width:700px;height:250px"  
             url="<%=request.getContextPath()%>/userList.html"  
             toolbar="#toolbar" pagination="true"  
             rownumbers="true" fitColumns="true" singleSelect="true">  
         <thead>  
             <tr >  
-                <th field="userId" width="30" >用户ID~</th>  
-                <th field="userName" width="50">姓名~</th>  
-                <th field="userPassword" width="30">密码~</th>  
-                <th field="userEmail" width="50">电子邮件~</th>    
+                <th field="userId" width="10" >用户ID</th>  
+                <th field="userName" width="10">姓名</th>  
+                <th field="userPassword" width="10">密码</th>  
+                <th field="userEmail" width="30">电子邮件</th>    
             </tr>  
         </thead>  
     </table>  
