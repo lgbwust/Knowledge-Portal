@@ -230,4 +230,28 @@
      where kid = #{kid}
      </delete>
      
+     <!-- 更新用户 -->  
+    <update id="editKnowledge" parameterType="com.kp.domain.KnowledgeWithBLOBs">  
+        update knowledge set 
+        <if test="userId != null" >
+        user_id = #{userId},
+      </if>
+      <if test="cid != null" >
+        cid = #{cid},
+      </if>
+      <if test="status != null" >
+        status = #{status},
+      </if>
+      <if test="title != null" >
+        title = #{title},
+      </if>
+      <if test="content != null" >
+        content = #{content},
+      </if>
+      <if test="extra != null" >
+        extra = #{extra},
+      </if>
+      where kid = #{kid} 
+    </update> 
+     
 </mapper>

@@ -14,7 +14,7 @@
             if (row){  
                 $('#dlg').dialog('open').dialog('setTitle','编辑知识');  
                 $('#fm').form('load',row);  
-                url_pattern = '<%=request.getContextPath()%>/admin/updateKnowledge.html';  
+                url_pattern = '<%=request.getContextPath()%>/admin/editKnowledge.html';  
             }  
         }  
         function newKnowledge(){  
@@ -125,7 +125,7 @@
 			</form>
 		
 		<div id="dlg-buttons">  
-        <a href="javascript:void(0)" class="easyui-linkbutton c6" iconCls="icon-ok" onclick="saveUser()" style="width:90px">保存</a>  
+        <a href="javascript:void(0)" class="easyui-linkbutton c6" iconCls="icon-ok" onclick="saveKnowledge()" style="width:90px">保存</a>  
         <a href="javascript:void(0)" class="easyui-linkbutton" iconCls="icon-cancel" onclick="javascript:$('#dlg').dialog('close')" style="width:90px">取消</a>  
         </div>
 		
