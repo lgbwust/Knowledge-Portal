@@ -1,6 +1,7 @@
 package com.kp.controller;
 
 import java.io.IOException;
+import java.io.UnsupportedEncodingException;
 import java.text.SimpleDateFormat;
 import java.util.ArrayList;
 import java.util.Date;
@@ -97,14 +98,16 @@ public class FileController {
 	 * @param request
 	 * @param response
 	 * @return
+	 * @throws UnsupportedEncodingException 
 	 */
 	@RequestMapping("/download")
 	public String download(String fileName, HttpServletRequest request,
-			HttpServletResponse response) {
+			HttpServletResponse response) throws UnsupportedEncodingException {
 		response.setCharacterEncoding("utf-8");
 		response.setContentType("multipart/form-data");
-		response.setHeader("Content-Disposition", "attachment;fileName="
-				+ fileName);
+		//response.setHeader("Content-Disposition", "attachment;fileName="+ fileName);
+		//解决下载过程中文件名出现乱码的问题
+		response.addHeader("Content-Disposition", "attachment;fileName="+new String(fileName.getBytes("gbk"),"iso-8859-1"));
 		try {
 			//String path = Thread.currentThread().getContextClassLoader().getResource("").getPath()+ "download";//这个download目录为啥建立在classes下的
 			String path="D:/";
