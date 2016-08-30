@@ -28,6 +28,7 @@
 			<div class="title">
 				<!--  <h1>此处添加title</h1>
 				<h2>此处添加subtitle</h2>-->
+				<h1>知识门户</h1>
 			</div>
 		</div>
 	
@@ -98,9 +99,9 @@
 <tr>
 <td>${allFiles.fileId}</td>
 <td>${allFiles.user.getUserName()}</td>
-<td>${allFiles.fileName}</td>
+<td><a href="<%=basePath%>download.html?fileName=${allFiles.fileName}">${allFiles.fileName}</a></td>
 <td>${allFiles.fileDes}</td>
-<td>${allFiles.status}</td>
+<td>${allFiles.fileStatus}</td>
 </tr>
 </c:forEach>
 </table>

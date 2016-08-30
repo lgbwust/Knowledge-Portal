@@ -106,9 +106,8 @@ public class FileController {
 		response.setHeader("Content-Disposition", "attachment;fileName="
 				+ fileName);
 		try {
-			String path = Thread.currentThread().getContextClassLoader()
-					.getResource("").getPath()
-					+ "download";//这个download目录为啥建立在classes下的
+			//String path = Thread.currentThread().getContextClassLoader().getResource("").getPath()+ "download";//这个download目录为啥建立在classes下的
+			String path="D:/";
 			java.io.InputStream inputStream = new java.io.FileInputStream(new java.io.File(path
 					+ java.io.File.separator + fileName));
 

@@ -28,6 +28,7 @@
 			<div class="title">
 				<!--  <h1>此处添加title</h1>
 				<h2>此处添加subtitle</h2>-->
+				<h1>知识门户</h1>
 			</div>
 		</div>
 		

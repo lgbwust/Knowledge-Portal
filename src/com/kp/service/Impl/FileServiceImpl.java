@@ -77,7 +77,11 @@ public class FileServiceImpl implements FileService {
 
 	@Override
 	public List<File> listFile(int i) {
-		// TODO Auto-generated method stub
-		return null;
+		 try {  
+	            return fileDao.listFile(i);
+	        } catch (Exception e) {  
+	            e.printStackTrace();  
+	        }  
+	        return null; 
 	}
 }

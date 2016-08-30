@@ -14,6 +14,24 @@
     <result column="file_type" property="fileType" jdbcType="VARCHAR" />
     <result column="file_status" property="fileStatus" jdbcType="INTEGER" />
   </resultMap>
+  
+    <!-- 多表查询实现，用于显示知识点 -->
+   <resultMap id="ResultFileMap" type="com.kp.domain.File" >
+    <id column="file_id" property="fileId" jdbcType="INTEGER" />
+    <result column="user_id" property="userId" jdbcType="INTEGER" />
+    <result column="file_name" property="fileName" jdbcType="VARCHAR" />
+    <result column="file_des" property="fileDes" jdbcType="VARCHAR" />
+    <result column="file_path" property="filePath" jdbcType="VARCHAR" />
+    <result column="file_type" property="fileType" jdbcType="VARCHAR" />
+    <result column="file_status" property="fileStatus" jdbcType="INTEGER" />
+    <collection property="user" ofType="com.kp.domain.User">
+    <id column="user_id" property="userId" jdbcType="INTEGER" />
+    <result column="user_name" property="userName" jdbcType="VARCHAR" />
+    <result column="user_password" property="userPassword" jdbcType="VARCHAR" />
+    <result column="user_email" property="userEmail" jdbcType="VARCHAR" />
+    </collection>
+  </resultMap>
+  
   <sql id="Base_Column_List" >
     <!--
       WARNING - @mbggenerated
@@ -146,4 +164,12 @@
       file_status = #{fileStatus,jdbcType=INTEGER}
     where file_id = #{fileId,jdbcType=INTEGER}
   </update>
+  
+     <!--显示知识点-->
+    <select id="listFile" resultMap="ResultFileMap">
+        SELECT
+        *
+        FROM file F,user U
+        WHERE F.user_id = U.user_id AND F.file_status = #{file_status}
+    </select>
 </mapper>
