@@ -40,6 +40,13 @@ public class FileController {
 	@Resource
 	private FileService fileService;
 	
+	/**
+	 * 文件上传功能
+	 * @param request
+	 * @param response
+	 * @return
+	 * @throws IOException
+	 */
 	@RequestMapping("/uploadFile")
 	public String upload(HttpServletRequest request,
 			HttpServletResponse response) throws IOException {
@@ -88,7 +95,7 @@ public class FileController {
 			}
 
 		}
-		return "admin/uploadResult";
+		return "user/uploadResult";
 
 	}
 
@@ -142,7 +149,8 @@ public class FileController {
 	 */
 	@RequestMapping(value="/showFiles")
 	public String showFiles(HttpServletRequest request){
-		List<File> allFiles=fileService.listFile(0);
+		//显示通过审核的文件，0代表未审核，1代表审核通过
+		List<File> allFiles=fileService.listFile(1);
 		request.setAttribute("allFiles",allFiles);
 		return "user/index";
 	}

@@ -16,6 +16,7 @@ import com.google.code.kaptcha.Constants;
 import com.google.code.kaptcha.Producer;  
   
 /**
+ * 需要引入kaptcha.jar这个包
  * @date 2016/08/23
  * @Description 使用google kaptcha生成验证码
  * @author fiberhome

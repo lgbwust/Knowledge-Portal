@@ -39,8 +39,14 @@ public class UserController {
 	private static Logger log = Logger.getLogger(UserController.class);
 	@Resource
 	private UserService userService;
-	private KnowledgeService knowledgeService;
-	
+
+	/**
+	 * 检查用户名是否存在
+	 * @param request
+	 * @param response
+	 * @return
+	 * @throws IOException
+	 */
     @RequestMapping(value="/checkUserName",method = RequestMethod.POST)  
     public String checkUserName(HttpServletRequest request, HttpServletResponse response) throws IOException{  
         String userName=(String)request.getParameter("userName");             
@@ -64,6 +70,13 @@ public class UserController {
         return null;  
     }
     
+    /**
+     * 检查Email是否存在
+     * @param request
+     * @param response
+     * @return
+     * @throws IOException
+     */
     @RequestMapping(value="/checkEmail",method = RequestMethod.POST)  
     public String checkUserEmail(HttpServletRequest request, HttpServletResponse response) throws IOException{  
         String userEmail=(String)request.getParameter("email");             
@@ -86,7 +99,14 @@ public class UserController {
         response.getWriter().close();  
         return null;  
     } 
-   
+    
+    /**
+     * 用户注册
+     * @param request
+     * @param response
+     * @return
+     * @throws IOException
+     */
     @RequestMapping(value="/register")  
     public ModelAndView  successed(HttpServletRequest request, HttpServletResponse response) throws IOException{  
         String username=(String)request.getParameter("username");     
@@ -116,6 +136,14 @@ public class UserController {
         return new ModelAndView("user/successed",map);    
     } 
     
+    /**
+     * 用户登录
+     * @param user
+     * @param request
+     * @param redirectAttributes
+     * @param kaptchaReceived
+     * @return
+     */
     @RequestMapping(value="/login")
     public String Userlogin(User user, HttpServletRequest request, RedirectAttributes redirectAttributes,
 			@RequestParam(value = "kaptcha", required = true) String kaptchaReceived) {

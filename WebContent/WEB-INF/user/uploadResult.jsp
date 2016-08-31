@@ -39,9 +39,9 @@
 			</div>
 		</div>
 		<div id="main">
-		您当前的位置 > <a href="<%=basePath %>ind.html">主页</a> > 知识添加结果
+		您当前的位置 > <a href="<%=basePath %>ind.html">主页</a> > 文件添加结果
 		</div>
-		<div><h1>添加成功，待管理员审核通过后将显示在主页上</h1></div>
+		添加成功，待管理员审核通过后将显示在主页上
 		<div id="footer">
 			<div class="padding">
 				Copyright &copy; 测试页面

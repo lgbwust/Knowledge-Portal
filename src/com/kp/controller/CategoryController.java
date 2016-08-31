@@ -17,8 +17,10 @@ public class CategoryController {
 	@Resource
 	private CategoryService categoryService;
 	
+	/*
 	@RequestMapping(value="/xx",method=RequestMethod.POST)
 	public String xx(){
 		return "xx";
 	}
+	*/
 }

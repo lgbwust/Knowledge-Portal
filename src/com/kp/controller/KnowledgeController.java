@@ -27,11 +27,10 @@ import com.kp.service.UserService;
  */
 @Controller
 public class KnowledgeController{
+	
 	//注意！！！每一个service都要进行注解，否则找不到~~~
 	@Resource
 	private KnowledgeService knowledgeService;
-	private UserService userService;
-	private FileService fileService;
 	
 	//添加知识点
 	@RequestMapping(value="/addknowledge",method=RequestMethod.POST)
@@ -77,12 +76,9 @@ public class KnowledgeController{
 	//知识点展示功能实现
 	@RequestMapping(value="/showinfo")
 	public String showKnowledge(HttpServletRequest request){
-		//List<KnowledgeWithBLOBs> xx= knowledgeService.selectByPrimaryKey(3);
 		//展示知识点~~~
-		List<KnowledgeWithBLOBs> xx=knowledgeService.listKnowledge(0);
-		//List<User> xx=userService.getAllUser();
-		//User xx=userService.selectByPrimaryKey(1);
-		//File xx=fileService.selectByPrimaryKey(1);
+		//显示通过审核的知识，0代表未审核，1代表审核通过
+		List<KnowledgeWithBLOBs> xx=knowledgeService.listKnowledge(1);
 		request.setAttribute("xx",xx);
 		return "user/index";
 	}

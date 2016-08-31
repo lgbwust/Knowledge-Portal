@@ -47,6 +47,7 @@ public class AdminController extends JsonUtil {
 	//添加log信息
 	private final Logger log = LoggerFactory.getLogger(AdminController.class);
 	
+	//每一个service都必须使用@Resource注解，否则会报错
 	@Resource
 	private AdminService adminService;
 	@Resource
@@ -149,7 +150,7 @@ public class AdminController extends JsonUtil {
     }
 	
 	/**
-	 * 用户管理
+	 * 显示用户列表
 	 * @param page
 	 * @param rows
 	 * @param response
@@ -170,6 +171,11 @@ public class AdminController extends JsonUtil {
         this.toBeJson(uList, total, response);  
     }
 	
+	/**
+	 * 添加用户
+	 * @param request
+	 * @param user
+	 */
 	 @RequestMapping("/admin/addUser")  
 	 public void addUser(HttpServletRequest request,User user){    
 		 //输出接收的参数
@@ -182,6 +188,10 @@ public class AdminController extends JsonUtil {
 		 userService.insert(user);
 	    }
 	 
+	 /**
+	  * 删除用户
+	  * @param request
+	  */
 	 @RequestMapping(value="/admin/deleteUser")
 	 public void deleteUser(HttpServletRequest request){
 		 int userId=Integer.parseInt(request.getParameter("userId"));
@@ -192,6 +202,12 @@ public class AdminController extends JsonUtil {
 		 userService.deleteByPrimaryKey(userId);
 	 }
 	 
+	 /**
+	  * 编辑用户
+	  * @param request
+	  * @param user
+	  * @throws UnsupportedEncodingException
+	  */
 	 @RequestMapping(value="/admin/editUser")
 	 public void updateUser(HttpServletRequest request,User user) throws UnsupportedEncodingException{ 
 		 //输出接收的参数
@@ -205,7 +221,12 @@ public class AdminController extends JsonUtil {
 	    }
 	 
 	 /**
-	  * 知识审核及其它操作部分
+	  * 显示知识列表
+	  * @param page
+	  * @param rows
+	  * @param response
+	  * @param model
+	  * @throws IOException
 	  */
 	 @RequestMapping(value="/admin/knowledgeList")
 	 public  void knowledgeList(int page,int rows,HttpServletResponse response,Model model) throws IOException{  
@@ -221,6 +242,11 @@ public class AdminController extends JsonUtil {
 	        this.toBeJson(kList, total, response);    
 	 }
 	 
+	 /**
+	  * 编辑知识
+	  * @param request
+	  * @param kp
+	  */
 	 @RequestMapping(value="/admin/editKnowledge")
 	 public void editKnowledge(HttpServletRequest request,KnowledgeWithBLOBs kp){
 		 //输出接收的参数
@@ -233,12 +259,20 @@ public class AdminController extends JsonUtil {
 		 knowledgeService.updateByPrimaryKeySelective(kp);
 	 }
 	 
+	 /**
+	  * 删除知识
+	  * @param request
+	  */
 	 @RequestMapping(value="/admin/deleteKnowledge")
 	 public void deleteKnowledge(HttpServletRequest request){
 		 String id = request.getParameter("kid"); 
 		 knowledgeService.deleteKnowledge(Integer.parseInt(id));
 	 }
 	 
+	 /**
+	  * 审核知识
+	  * @param request
+	  */
 	 @RequestMapping(value="/admin/checkKnowledge")
 	 public void checkKnowledge(HttpServletRequest request){
 		 String id = request.getParameter("kid");  
@@ -248,7 +282,12 @@ public class AdminController extends JsonUtil {
 	 }
 	 
 	 /**
-	  * 文件管理部分
+	  * 显示文件列表
+	  * @param page
+	  * @param rows
+	  * @param response
+	  * @param model
+	  * @throws IOException
 	  */
 	 @RequestMapping(value="/admin/fileList")
 	 public void fileList(int page,int rows,HttpServletResponse response,Model model) throws IOException{
@@ -264,6 +303,10 @@ public class AdminController extends JsonUtil {
 	        this.toBeJson(fList, total, response); 
 	 }
 	 
+	 /**
+	  * 删除文件
+	  * @param request
+	  */
 	 @RequestMapping(value="/admin/deleteFile")
 	 public void deleteFile(HttpServletRequest request){
 		 String id = request.getParameter("fileId"); 
@@ -273,6 +316,10 @@ public class AdminController extends JsonUtil {
 		 fileService.deleteByPrimaryKey(Integer.parseInt(id));
 	 }
 	 
+	 /**
+	  * 审核文件
+	  * @param request
+	  */
 	 @RequestMapping(value="/admin/checkFile")
 	 public void checkFile(HttpServletRequest request){
 		 String id = request.getParameter("fileId");
