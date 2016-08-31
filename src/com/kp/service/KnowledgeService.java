@@ -32,4 +32,6 @@ public interface KnowledgeService {
 	void editKnowledge(KnowledgeWithBLOBs kp);
 
 	void deleteKnowledge(int parseInt);
+	
+	List<KnowledgeWithBLOBs> searchKnowledge(String content);
 }

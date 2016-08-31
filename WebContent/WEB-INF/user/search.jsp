@@ -46,28 +46,13 @@
 			<div class="left_side">
             	
 				<h2><a href="#">知识搜索</a></h2>
-				<h3>普通搜索为普通用户服务，高级搜索为高级用户服务</h3>
+				<h3>搜索</h3>
                 <div class="register">
-                <form action="<%=basePath %>ind.do" method="post">
+                <form action="<%=basePath %>search.html" method="post">
                 	<table border="0" cellspacing="20">              	    
                         <tr>
-                        	<td>知识名称：</td>
-                        	<td><input type="text" name="EName" id="" /></td>
-                        </tr>
-                        <tr>
-                        	<td>上传者：</td>
-                        	<td><input type="text" name="username" /></td>
-                        </tr>
-                        <tr>
-                        	<td>知识类别：</td>
-                            <td>
-                            	<select name="HName">
-                                	<option value="1">Java</option>
-                                    <option value="2">C++</option>
-                                    <option value="3">dotnet</option>
-                                    <option value="4">others</option>
-                                </select>
-                            </td>
+                        	<td>搜索内容：</td>
+                        	<td><input type="text" name="content" id="content" /></td>
                         </tr>
                       
                         <tr>

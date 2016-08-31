@@ -145,4 +145,14 @@ public class KnowledgeServiceImpl implements KnowledgeService {
 		
 	}
 
+	@Override
+	public List<KnowledgeWithBLOBs> searchKnowledge(String content) {
+		try {  
+            return knowledgeDao.searchKnowledge(content);
+        } catch (Exception e) {  
+            e.printStackTrace();  
+        }  
+        return null; 
+	}
+
 }

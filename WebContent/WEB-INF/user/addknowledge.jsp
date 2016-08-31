@@ -21,8 +21,8 @@
 		</div>
 		<div id="header">
 			<div class="f_search">
-					<form method="post" action="searchresult.jsp">
-						<p><input type="text" name="EKeywords" value="search..." class="search" onblur="if(this.value=='') this.value='search...';" onfocus="if(this.value=='search...') this.value='';" /> <input type="submit" value="Go" class="submit" /></p>
+					<form method="post" action="<%=basePath %>search.html">
+						<p><input type="text" name="content" value="search..." class="search" onblur="if(this.value=='') this.value='search...';" onfocus="if(this.value=='search...') this.value='';" /> <input type="submit" value="Go" class="submit" /></p>
 					</form>
 			</div>
 			<div class="title">
@@ -50,7 +50,7 @@
 			<div class="left_side">
             	
 				<h2><a href="#">新知识上传</a></h2>
-				<h3>知识系统的壮大，需要每个会员的支持</h3>
+				<h3>欢迎上传新知识</h3>
                 <div class="register">
                  <form action="<%=basePath %>addknowledge.html" method="post">
 							  

@@ -41,7 +41,9 @@
 		<div id="main">
 		您当前的位置 > <a href="<%=basePath %>ind.html">主页</a> > 文件添加结果
 		</div>
-		添加成功，待管理员审核通过后将显示在主页上
+		<div class="left_side">
+		<h2>文件上传成功，待管理员审核通过后将显示在主页上</h2>
+		</div>
 		<div id="footer">
 			<div class="padding">
 				Copyright &copy; 测试页面

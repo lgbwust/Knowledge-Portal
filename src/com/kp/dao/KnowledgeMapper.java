@@ -2,6 +2,8 @@ package com.kp.dao;
 
 import java.util.List;
 
+import org.apache.ibatis.annotations.Param;
+
 import com.kp.domain.Knowledge;
 import com.kp.domain.KnowledgeWithBLOBs;
 
@@ -74,4 +76,6 @@ public interface KnowledgeMapper {
     void editKnowledge(KnowledgeWithBLOBs kp);
 
 	void deleteKnowledge(int parseInt);
+	
+	List<KnowledgeWithBLOBs> searchKnowledge(@Param("content")String content);
 }

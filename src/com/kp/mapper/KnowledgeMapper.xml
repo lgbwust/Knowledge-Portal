@@ -253,5 +253,19 @@
       </if>
       where kid = #{kid} 
     </update> 
+    
+    <!-- 搜索通过审核的知识 -->
+     <select id="searchKnowledge" parameterType="String" resultMap="ResultKnowledgeMap">
+       SELECT
+       *
+       FROM knowledge k,category c,user u
+       WHERE k.user_id=u.user_id AND k.cid=c.cid AND k.status = 1
+       AND 
+       (
+       title like '%${content}%'
+       OR content like '%${content}%'
+       OR c.cname like '%${content}%'
+       )
+  </select>
      
 </mapper>

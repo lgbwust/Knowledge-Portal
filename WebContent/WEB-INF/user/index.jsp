@@ -21,8 +21,8 @@
 		</div>
 		<div id="header">
 			<div class="f_search">
-					<form method="post" action="searchresult.jsp">
-						<p><input type="text" name="EKeywords" value="search..." class="search" onblur="if(this.value=='') this.value='search...';" onfocus="if(this.value=='search...') this.value='';" /> <input type="submit" value="Go" class="submit" /></p>
+					<form method="post" action="<%=basePath %>search.html">
+						<p><input type="text" name="content" value="search..." class="search" onblur="if(this.value=='') this.value='search...';" onfocus="if(this.value=='search...') this.value='';" /> <input type="submit" value="Go" class="submit" /></p>
 					</form>
 			</div>
 			<div class="title">

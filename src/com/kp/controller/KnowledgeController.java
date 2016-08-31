@@ -73,7 +73,11 @@ public class KnowledgeController{
         response.getWriter().close();*/  
         return new ModelAndView("user/addResult",map);    
     }
-	//知识点展示功能实现
+	/**
+	 * 知识点展示功能实现
+	 * @param request
+	 * @return
+	 */
 	@RequestMapping(value="/showinfo")
 	public String showKnowledge(HttpServletRequest request){
 		//展示知识点~~~
@@ -81,6 +85,19 @@ public class KnowledgeController{
 		List<KnowledgeWithBLOBs> xx=knowledgeService.listKnowledge(1);
 		request.setAttribute("xx",xx);
 		return "user/index";
+	}
+	
+	/**
+	 * 搜索知识并显示
+	 * @param request
+	 * @return
+	 */
+	@RequestMapping(value="/search")
+	public String search(HttpServletRequest request){
+		String content=(String)request.getParameter("content");
+		List<KnowledgeWithBLOBs> res=knowledgeService.searchKnowledge(content);
+		request.setAttribute("res", res);
+		return "user/searchResult";
 	}
 }
 
