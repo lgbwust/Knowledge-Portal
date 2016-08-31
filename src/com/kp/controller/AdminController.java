@@ -205,6 +205,13 @@ public class AdminController extends JsonUtil {
 	 
 	 @RequestMapping(value="/admin/editKnowledge")
 	 public void editKnowledge(HttpServletRequest request,KnowledgeWithBLOBs kp){
+		 //输出接收的参数
+		 System.out.println("接收到的ID为："+kp.getKid());
+		 System.out.println("接收到的内容为："+kp.getContent());
+		 System.out.println("接收到的附加信息为："+kp.getExtra());
+		 System.out.println("接收到的标题为："+kp.getTitle());
+		 
+		 //更新数据库
 		 knowledgeService.updateByPrimaryKeySelective(kp);
 	 }
 	 

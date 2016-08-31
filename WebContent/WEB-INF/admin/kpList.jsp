@@ -110,6 +110,7 @@
 			buttons="#dlg-buttons">
 			<div class="ftitle">编辑知识</div>
 			<form id="fm" method="post" novalidate>
+			<input name="kid" type="hidden">
 				<div class="fitem">
 					<label>知识标题:</label> <input name="title" class="easyui-textbox"
 						required="true">
