@@ -104,4 +104,13 @@ public class FileServiceImpl implements FileService {
         }  
         return null; 
 	}
+
+	@Override
+	public void checkFile(int id) {
+		try {  
+			fileDao.checkFile(id);
+        } catch (Exception e) {  
+            e.printStackTrace();  
+        }  		
+	}
 }

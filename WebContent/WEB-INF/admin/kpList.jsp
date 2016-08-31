@@ -99,9 +99,9 @@
 
 		<!-- 按钮 -->
 		 <div id="toolbar">  
-        <a href="javascript:void(0)" class="easyui-linkbutton" iconCls="icon-edit" plain="true" onclick="editKnowledge()">编辑</a>  
-        <a href="javascript:void(0)" class="easyui-linkbutton" iconCls="icon-remove" plain="true" onclick="deleteKnowledge()">删除</a>
-        <a href="javascript:void(0)" class="easyui-linkbutton" iconCls="icon-ok" plain="true" onclick="checkKnowledge()">审核</a>  
+        <a href="javascript:void(0)" class="easyui-linkbutton" iconCls="icon-edit" plain="true" onclick="editKnowledge()">编辑知识</a>  
+        <a href="javascript:void(0)" class="easyui-linkbutton" iconCls="icon-remove" plain="true" onclick="deleteKnowledge()">删除知识</a>
+        <a href="javascript:void(0)" class="easyui-linkbutton" iconCls="icon-ok" plain="true" onclick="checkKnowledge()">审核知识</a>  
     </div> 
 
 		<!-- 添加/修改对话框 -->

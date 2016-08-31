@@ -23,4 +23,6 @@ public interface FileService {
 	List<File> getAllFile();
 
 	List<File> getFileByPage(int m,int n);
+	
+	void checkFile(int id);
 }

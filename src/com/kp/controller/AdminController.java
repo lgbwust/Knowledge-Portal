@@ -156,7 +156,7 @@ public class AdminController extends JsonUtil {
 	 * @param model
 	 * @throws IOException
 	 */
-	@RequestMapping(value="/userList")
+	@RequestMapping(value="/admin/userList")
 	public  void userList(int page,int rows,HttpServletResponse response,Model model) throws IOException{  
         response.setContentType("application/json; charset=utf-8");  
         //求得开始记录与结束记录  
@@ -170,20 +170,38 @@ public class AdminController extends JsonUtil {
         this.toBeJson(uList, total, response);  
     }
 	
-	 @RequestMapping("/addUser")  
+	 @RequestMapping("/admin/addUser")  
 	 public void addUser(HttpServletRequest request,User user){    
-	        userService.insert(user);
+		 //输出接收的参数
+		 System.out.println("接收到的用户ID为："+user.getUserId());
+		 System.out.println("接收到的用户名为："+user.getUserName());
+		 System.out.println("接收到的密码为："+user.getUserPassword());
+		 System.out.println("接收到的邮件："+user.getUserEmail());
+		 
+		 //添加到数据库
+		 userService.insert(user);
 	    }
 	 
-	 @RequestMapping(value="/deleteUser")
+	 @RequestMapping(value="/admin/deleteUser")
 	 public void deleteUser(HttpServletRequest request){
 		 int userId=Integer.parseInt(request.getParameter("userId"));
+		 //test output
+		 System.out.println("接收到的用户ID为："+userId);
+		 
+		 //del
 		 userService.deleteByPrimaryKey(userId);
 	 }
 	 
-	 @RequestMapping(value="/updateUser")
-	 public void updateUser(HttpServletRequest request,User user) throws UnsupportedEncodingException{  
-	        userService.updateUserNameSelective(user);
+	 @RequestMapping(value="/admin/editUser")
+	 public void updateUser(HttpServletRequest request,User user) throws UnsupportedEncodingException{ 
+		 //输出接收的参数
+		 System.out.println("接收到的用户ID为："+user.getUserId());
+		 System.out.println("接收到的用户名为："+user.getUserName());
+		 System.out.println("接收到的密码为："+user.getUserPassword());
+		 System.out.println("接收到的邮件："+user.getUserEmail());
+		 
+		 //更新用户
+	     userService.updateByPrimaryKey(user);
 	    }
 	 
 	 /**
@@ -244,5 +262,23 @@ public class AdminController extends JsonUtil {
 	        System.out.println("日志信息一定要长这样才看得见啊"+start);
 	        System.out.println("日志信息一定要长这样才看得见啊"+end);
 	        this.toBeJson(fList, total, response); 
+	 }
+	 
+	 @RequestMapping(value="/admin/deleteFile")
+	 public void deleteFile(HttpServletRequest request){
+		 String id = request.getParameter("fileId"); 
+		 //test output
+		 System.out.println("接收到的文件ID为："+id);
+		 
+		 fileService.deleteByPrimaryKey(Integer.parseInt(id));
+	 }
+	 
+	 @RequestMapping(value="/admin/checkFile")
+	 public void checkFile(HttpServletRequest request){
+		 String id = request.getParameter("fileId");
+		 //test output
+		 System.out.println("接收到的文件ID为："+id);
+		 
+		 fileService.checkFile(Integer.parseInt(id));
 	 }
 }

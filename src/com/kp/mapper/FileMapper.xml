@@ -189,4 +189,11 @@
         WHERE f.user_id=u.user_id
         LIMIT #{0},#{1}
      </select>
+     
+     <!-- 审核功能 -->
+     <update id="checkFile" parameterType="com.kp.domain.File" >
+     update file
+     set file_status = 1
+     where file_id = #{fileID}
+     </update>
 </mapper>
