@@ -12,7 +12,7 @@
 <form action="${pageContext.request.contextPath}/adminlogin.html" method="post">
 <table width="300" border="1" align="center">
     <tr>
-      <td colspan="2">管理员登录</td>
+      <td colspan="2"><center>管理员登录</center></td>
     </tr>
     <tr>
       <td>用户名:</td>
@@ -26,7 +26,7 @@
     </tr>
     <tr>
       <td colspan="2">
-        <input type="submit" name="submit" value="登录"/>
+        <center><input type="submit" name="submit" value="登录"/></center>
       </td>
     </tr>
         <c:if test="${admsg!=null}">

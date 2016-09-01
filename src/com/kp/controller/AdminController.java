@@ -62,7 +62,7 @@ public class AdminController extends JsonUtil {
 	 * @param request
 	 * @return
 	 */
-	@RequestMapping(value = "/adminlogin", method = RequestMethod.POST)
+	@RequestMapping(value = "/adminlogin")
 	public String adminlogin(HttpServletRequest request) {
 		//test output
 		String name=request.getParameter("adminName");

@@ -89,7 +89,8 @@
         <div data-options="region:'east',iconCls:'icon-reload',split:false"
         title="日历信息" style="width: 240px;">
         <div class="easyui-calendar" style="width: 230px; height: 230px;"></div>
-        <div style="width: 230px">努力Coding中</div>
+        <br>
+        <center><div style="width: 230px">努力Coding中</div></center>
     </div>
         
         <!-- 正下方panel -->  
